@@ -1,0 +1,16 @@
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\consola.exe
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\consola.deps.json
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\consola.runtimeconfig.json
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\consola.runtimeconfig.dev.json
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\consola.dll
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\consola.pdb
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.csprojAssemblyReference.cache
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.AssemblyInfoInputs.cache
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.AssemblyInfo.cs
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.csproj.CoreCompileInputs.cache
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.dll
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.pdb
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.genruntimeconfig.cache
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\dominio.dll
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\bin\Debug\netcoreapp3.1\dominio.pdb
+C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\consola\obj\Debug\netcoreapp3.1\consola.csproj.CopyComplete

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xROHv8lZwNcRPnvLnBo7q1GREwpTika5AjEh7YelH+K1v4IA0JUXbU90rULhlBwYjKgbLirQ2jTAV1hyLn6c/A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\dominio\\dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jzuletas\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\jzuletas\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
