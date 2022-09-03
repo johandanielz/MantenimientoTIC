@@ -12,7 +12,7 @@ namespace dominio
         public DateTime Fecha_fin {get; set;}
         public string Estado {get; set;}
         public string Sintomas {get; set;}
-        public int Id_vehiculo {get; set;}
-        public int Id_tecnico {get; set;}
+        public Vehiculo vehiculo_ {get; set;}
+        public Tecnico tecnico_ {get; set;}
     }
 }

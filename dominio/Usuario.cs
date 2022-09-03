@@ -9,6 +9,6 @@ namespace dominio
         public string User {get; set;}
         public string Password {get; set;}
         public bool Estado {get; set;}
-        public int Id_persona {get; set;}
+        public Persona persona_ {get; set;}
     }
 }

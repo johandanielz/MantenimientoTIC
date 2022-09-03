@@ -8,9 +8,9 @@ namespace dominio
         public string Placa {get; set;}
         public string Modelo {get; set;}
         public string Servicio {get; set;}
-        public int Id_persona {get; set;}
-        public int Id_tipo_vehiculo {get; set;}
-        public int Id_estilo {get; set;}
-        public int Id_color {get; set;}
+        public Persona persona_ {get; set;}
+        public TipoVehiculo tipo_vehiculo_ {get; set;}
+        public Estilo estilo_ {get; set;}
+        public Color color_ {get; set;}
     }
 }

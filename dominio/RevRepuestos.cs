@@ -5,7 +5,7 @@ namespace dominio
     public class RevRepuestos
     {
         public int Id {get; set;}
-        public int Id_repuesto {get; set;}
-        public int Id_revision {get; set;}
+        public Repuesto repuesto_ {get; set;}
+        public Revision revision_ {get; set;}
     }
 }

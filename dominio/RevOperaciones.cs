@@ -5,7 +5,7 @@ namespace dominio
     public class RevOperaciones
     {
         public int Id {get; set;}
-        public int Id_operacion {get; set;}
-        public int Id_revision {get; set;}   
+        public Operacion operacion_ {get; set;}
+        public Revision revision_ {get; set;}   
     }
 }

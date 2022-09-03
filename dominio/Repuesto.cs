@@ -12,6 +12,6 @@ namespace dominio
         public int Precio {get; set;}
         public int Cantidad {get; set;}
         public bool Estado {get; set;}
-        public int Id_grupo {get; set;}
+        public GrupoRepuesto grupo_ {get; set;}
     }
 }
