@@ -2,9 +2,9 @@ using System;
 
 namespace dominio
 {
-    public class GrupoRespuesto
+    public class GrupoRepuesto
     {
-        public int GrupoRespuesto_id {get; set;}
+        public int Id {get; set;}
         public string grupo {get; set;}
         public bool Estado {get; set;}
     }

@@ -9,10 +9,10 @@ namespace consola
     {
         static void Main(string[] args)
         {
-            Persona persona = new Persona();
+           /*  Persona persona = new Persona();
             persona.Nombre = "Johan";
             persona.Apellido = "Zuleta";
-            Console.WriteLine(persona.Nombre + " " + persona.Apellido + " " + persona.ingresar());
+            Console.WriteLine(persona.Nombre + " " + persona.Apellido + " " + persona.ingresar()); */
         }
     }
 }

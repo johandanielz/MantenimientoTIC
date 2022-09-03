@@ -4,7 +4,7 @@ namespace dominio
 {
     public class Vehiculo
     {
-        public int Vehiculo_id {get; set;}
+        public int Id {get; set;}
         public string Placa {get; set;}
         public string Modelo {get; set;}
         public string Servicio {get; set;}

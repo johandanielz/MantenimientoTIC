@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\dominio\\dominio.csproj": {}
+    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\dominio\\dominio.csproj": {
+    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\dominio\\dominio.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj",
         "projectName": "dominio",
-        "projectPath": "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\dominio\\dominio.csproj",
-        "packagesPath": "C:\\Users\\jzuletas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\dominio\\obj\\",
+        "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj",
+        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jzuletas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"

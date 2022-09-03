@@ -5,7 +5,7 @@
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Humanizer.dll": {}
+          "lib/netstandard2.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {}
@@ -2067,6 +2067,16 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/dominio.dll": {}
         }
       }
     }
@@ -7236,6 +7246,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "dominio/1.0.0": {
+      "type": "project",
+      "path": "../dominio/dominio.csproj",
+      "msbuildProject": "../dominio/dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7243,23 +7258,24 @@
       "Microsoft.EntityFrameworkCore >= 5.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.10",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.10"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.10",
+      "dominio >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jzuletas\\.nuget\\packages\\": {}
+    "C:\\Users\\acer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\persistencia\\persistencia.csproj",
+      "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj",
       "projectName": "persistencia",
-      "projectPath": "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\persistencia\\persistencia.csproj",
-      "packagesPath": "C:\\Users\\jzuletas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jzuletas\\Documents\\CSharpProjects\\MantenimientoTIC\\persistencia\\obj\\",
+      "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj",
+      "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jzuletas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -7269,7 +7285,11 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj": {
+              "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

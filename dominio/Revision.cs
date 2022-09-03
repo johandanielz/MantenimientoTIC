@@ -4,7 +4,7 @@ namespace dominio
 {
     public class Revision
     {
-        public int Revision_id {get; set;}
+        public int Id {get; set;}
         public DateTime Fecha {get; set;}
         public int Kilometraje {get; set;}
         public string Estado_vehiculo {get; set;}

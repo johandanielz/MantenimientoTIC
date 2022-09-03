@@ -7,3 +7,12 @@ C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\dominio\obj\Debug\ne
 C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.csproj.CoreCompileInputs.cache
 C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.dll
 C:\Users\jzuletas\Documents\CSharpProjects\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.pdb
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\bin\Debug\netstandard2.0\dominio.deps.json
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\bin\Debug\netstandard2.0\dominio.dll
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\bin\Debug\netstandard2.0\dominio.pdb
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.csprojAssemblyReference.cache
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.AssemblyInfoInputs.cache
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.AssemblyInfo.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.csproj.CoreCompileInputs.cache
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.dll
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\dominio\obj\Debug\netstandard2.0\dominio.pdb

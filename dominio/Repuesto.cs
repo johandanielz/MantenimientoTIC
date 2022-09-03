@@ -4,7 +4,7 @@ namespace dominio
 {
     public class Repuesto
     {
-        public int Repuesto_id {get; set;}
+        public int Id {get; set;}
         public string Referencia {get; set;}
         public string Producto {get; set;}
         public string Tipo {get; set;}
