@@ -1,0 +1,34 @@
+﻿@page
+@model presentacion.Pages.PersonaModel
+@{
+}
+<h1>Listado de Saludos en Varios Idiomas</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cedula</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Celular</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Clasificacion</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var personas in Model.persona)
+    {
+        <tr>
+            <td>@personas.Id</td>
+            <td>@personas.Cedula</td>
+            <td>@personas.Nombre</td>
+            <td>@personas.Apellido</td>
+            <td>@personas.Celular</td>
+            <td>@personas.Correo</td>
+            <td>@personas.Direccion</td>
+            <td>@personas.Clasificacion</td>
+        </tr>
+    }
+ </tbody>
+</table>

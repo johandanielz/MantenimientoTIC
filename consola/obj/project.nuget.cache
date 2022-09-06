@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tkIH7cf0UDd0VO0QxYLhBDG0czhMUfcOIYL9bOVQ5OVHt9pyr1/CGEHT75g85m3nKu5aEMonT5DL/3wNfVzmNQ==",
+  "dgSpecHash": "4AE/ETAXJHhKx8X+PKMt5JCiG5y4FdAEcEp4Gdc42UKhCOFtiQSyXJAyxyiRvsh3LKVqU7BNoAqtkRgKRWfhZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\consola\\consola.csproj",
+  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\consola\\consola.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -14,7 +14,6 @@
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.0\\microsoft.entityframeworkcore.design.5.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.0\\microsoft.entityframeworkcore.relational.5.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.0\\microsoft.entityframeworkcore.sqlserver.5.0.0.nupkg.sha512",
-    "C:\\Users\\acer\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.0\\microsoft.entityframeworkcore.tools.5.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
