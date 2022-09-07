@@ -9,13 +9,11 @@ namespace consola
         private static IRepositorioPersona _repo = new RepositorioPersona(new AppContext());
         static void Main(string[] args)
         {   
-            /* var personas = _repo.GetAll();
+            var personas = _repo.GetAll();
             foreach (var persona in personas)
             {
                 Console.WriteLine(persona.Nombre);
-                Console.WriteLine(persona.Apellido);
-            } */
-            Console.WriteLine("Hola");
+            }
         }
     }
 }

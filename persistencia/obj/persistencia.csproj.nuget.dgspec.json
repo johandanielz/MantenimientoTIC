@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj": {}
+    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\persistencia\\persistencia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj": {
+    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\dominio\\dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\dominio\\dominio.csproj",
         "projectName": "dominio",
-        "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj",
+        "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\dominio\\dominio.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\obj\\",
+        "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -57,14 +57,14 @@
         }
       }
     },
-    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj": {
+    "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\persistencia\\persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\persistencia\\persistencia.csproj",
         "projectName": "persistencia",
-        "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj",
+        "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\persistencia\\persistencia.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\obj\\",
+        "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -78,8 +78,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj": {
-                "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj"
+              "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\dominio\\dominio.csproj": {
+                "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\dominio\\dominio.csproj"
               }
             }
           }
