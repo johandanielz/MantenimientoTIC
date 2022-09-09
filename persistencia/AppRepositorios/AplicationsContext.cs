@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace persistencia
 {
-    public class AppContext : DbContext
+    public class AplicationsContext : DbContext
     {
         private const string connectionString = @"Data Source=LAPTOP-SOGI9E3P;Initial Catalog=MantenimientoTic;Integrated Security=True;";
 
@@ -18,14 +18,14 @@ namespace persistencia
         public DbSet<RevOperaciones> revOperaciones {get; set;}
         public DbSet<Repuesto> repuesto {get; set;}
         public DbSet<GrupoRepuesto> grupoRepuesto {get; set;}
-        public DbSet<RevRepuestos> revRespuestos {get; set;} 
+        public DbSet<RevRepuestos> revRepuestos {get; set;} 
         public DbSet<Marca> marca {get;set;}
         public DbSet<Color> color {get;set;}
         public DbSet<Estilo> estilo {get;set;}
 
-        public AppContext(){}
+        public AplicationsContext(){}
 
-        public AppContext(DbContextOptions<AppContext> options)
+        public AplicationsContext(DbContextOptions<AplicationsContext> options)
         :base(options)
     {
     }

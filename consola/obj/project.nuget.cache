@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "92xcA/jZloVAnxx/A8eyQxbrmICUsdv87/j6fZYMqGRhD2Oj1oLiQTmHXuQWPBDBa2SnLjbiPps0iNgP5WqiVA==",
+  "dgSpecHash": "RSNtlQoJDvtNGq0czHrI5zDJVYHi4ld2Yk9tNxALuxXzPMdN2MNExEZijicMq7grUK4RHbAB26OrhWg31z/9Mg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTic\\consola\\consola.csproj",
+  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\consola\\consola.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
