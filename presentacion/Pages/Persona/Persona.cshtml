@@ -1,34 +1,75 @@
 ﻿@page
-@model presentacion.Pages.PersonaModel
+@model presentacion.Pages.PersonaModel 
 @{
 }
-<h1 >Listado de Personas</h1>
-<table class="table">
+<h3 class="text-center">Listado de Personas</h3>
+
+<a asp-page="Edit" class="btn btn-outline-primary">
+   <i class="fa-solid fa-user-plus"></i>
+</a>
+
+<table class="table table-sm">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Cedula</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Celular</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Clasificacion</th>
+      <th scope="col"class="text-center">N°</th>
+      <th scope="col" class="text-center">Cedula</th>
+      <th scope="col" class="text-center">Nombre</th>
+      <th scope="col" class="text-center">Apellidos</th>
+      <th scope="col" class="text-center">Celular</th>
+      <th scope="col" class="text-center">Correo</th>
+      <th scope="col" class="text-center">Direccion</th>
+      <th scope="col" class="text-center">Clasificacion</th>
+      <th colspan="3" class="text-center">Acciones</th>
     </tr>
   </thead>
   <tbody>
     @foreach (var personas in Model.persona)
     {
         <tr>
-            <td>@personas.Id</td>
-            <td>@personas.Cedula</td>
-            <td>@personas.Nombre</td>
-            <td>@personas.Apellido</td>
-            <td>@personas.Celular</td>
-            <td>@personas.Correo</td>
-            <td>@personas.Direccion</td>
-            <td>@personas.Clasificacion</td>
+            <td class="text-center">@personas.Id</td>
+            <td class="text-center">@personas.Cedula</td>
+            <td class="text-center">@personas.Nombre</td>
+            <td class="text-center">@personas.Apellido</td>
+            <td class="text-center">@personas.Celular</td>
+            <td class="text-center">@personas.Correo</td>
+            <td class="text-center">@personas.Direccion</td>
+            <td class="text-center">@personas.Clasificacion</td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn"  asp-route-Idpersona="@personas.Id" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./Edit" asp-route-Idpersona="@personas.Id">
+               <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./Edit" asp-route-Idpersona="@personas.Id">
+               <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
         </tr>
     }
  </tbody>
 </table>
+
+   
+
+    <!-- Modal -->
+  @*   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+            <label asp-for="ListPersona.Direccion"></label>
+            <input asp-for="ListPersona.Direccion" class="form-control" type="text">
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div> *@

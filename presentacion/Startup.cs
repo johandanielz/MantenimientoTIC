@@ -13,7 +13,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using persistencia;
 
-
 namespace presentacion
 {
     public class Startup
@@ -29,8 +28,15 @@ namespace presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-           /*  services.AddSingleton<IRepositorioPersona, RepositorioPersona>(); */
+
             services.AddScoped<IRepositorioPersona, RepositorioPersona>();
+            services.AddScoped<IRepositorioColor, RepositorioColor>();
+            services.AddScoped<IRepositorioOperacion, RepositorioOperacion>();
+            services.AddScoped<IRepositorioGrupoRepuesto, RepositorioGrupoRepuesto>();
+            services.AddScoped<IRepositorioTipoVehiculo, RepositorioTipoVehiculo>();
+
+
+            //Configuracion para la conexion a la bd
             services.AddDbContext<AplicationsContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }

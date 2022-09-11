@@ -1,0 +1,43 @@
+﻿@page
+@model presentacion.Pages.OperacionModel
+@{
+}
+<h3 class="text-center">Listado de Operaciones</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col">Codigo</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Horas</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var operaciones in Model.operacion)
+    {
+        <tr>
+            @if (operaciones.Estado == true)
+            {
+                <td>@operaciones.Id</td>
+                <td>@operaciones.Codigo</td>
+                <td>@operaciones.Nombre</td>
+                <td>@operaciones.Descripcion</td>
+                <td>@operaciones.Horas</td>
+                <td><span class="badge rounded-pill bg-primary">Activo</span></td>
+            }
+            else
+            {
+                <td>@operaciones.Id</td>
+                <td>@operaciones.Codigo</td>
+                <td>@operaciones.Nombre</td>
+                <td>@operaciones.Descripcion</td>
+                <td>@operaciones.Horas</td>
+                <td><span class="badge rounded-pill bg-danger">Inactivo</span></td>
+            }
+            
+        </tr>
+    }
+ </tbody>
+</table>

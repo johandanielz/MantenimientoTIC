@@ -1,0 +1,14 @@
+@page
+@model presentacion.Pages.EditModel
+@{
+}
+@if (@Model.ListPersona.Id > 0 )
+{
+    <h1>Editar Datos De: @Model.ListPersona.Nombre</h1>
+}
+else
+{
+        <h1>Agregar Registro</h1>
+}
+<!-- Button trigger modal -->
+    

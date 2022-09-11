@@ -82,3 +82,9 @@ C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentaci
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\presentacion.genruntimeconfig.cache
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Color\Color.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Operacion\Operacion.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\GrupoRepuesto\GrupoRepuesto.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\TipoVehiculo\TipoVehiculo.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Edit.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Info.cshtml.g.cs

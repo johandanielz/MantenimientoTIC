@@ -13,6 +13,7 @@ namespace presentacion.Pages
     public class PersonaModel : PageModel
     {
         private readonly IRepositorioPersona repositorioPersona;
+
         public IEnumerable<Persona> persona {get;set;}
 
         public PersonaModel(IRepositorioPersona repositorioPersona)

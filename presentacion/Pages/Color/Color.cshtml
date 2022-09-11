@@ -1,0 +1,32 @@
+﻿@page
+@model presentacion.Pages.ColorModel
+@{
+}
+<h3 class="text-center">Listado de Colores</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var colores in Model.color)
+    {
+        <tr>
+          @if (colores.Estado == true)
+          { 
+            <td>@colores.Id</td>
+            <td>@colores.Nombre</td>
+            <td><span class="badge rounded-pill bg-primary">Activo</span></td>
+          }else{
+            <td>@colores.Id</td>
+            <td>@colores.Nombre</td>
+            <td><span class="badge rounded-pill bg-danger">Inactivo</span></td>
+          }
+           
+        </tr>
+    }
+ </tbody>
+</table>

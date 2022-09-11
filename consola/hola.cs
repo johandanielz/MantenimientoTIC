@@ -10,6 +10,9 @@ namespace consola
         private static IRepositorioColor rcl = new RepositorioColor(new AplicationsContext());
         private static IRepositorioMarca rma = new RepositorioMarca(new AplicationsContext());
         private static IRepositorioEstilo res = new RepositorioEstilo(new AplicationsContext());
+        private static IRepositorioOperacion rop = new RepositorioOperacion(new AplicationsContext());
+        private static IRepositorioGrupoRepuesto rgr = new RepositorioGrupoRepuesto(new AplicationsContext());
+        private static IRepositorioTipoVehiculo rtv = new RepositorioTipoVehiculo(new AplicationsContext());
         static void Main(string[] args)
         {   
             /* var personas = _repo.GetAll();
@@ -18,8 +21,8 @@ namespace consola
                 Console.WriteLine(persona.Nombre);
             } */
             /* Color color = new Color();
-            color.Nombre = "Rojo";
-            color.Estado = true;
+            color.Nombre = "Verde";
+            color.Estado = false;
             rcl.Add(color);
             Console.WriteLine("Se agrego Correctamente"); */
 
@@ -42,7 +45,28 @@ namespace consola
             {
                 Console.WriteLine(estilo.Nombre);
             } */
+            /* Operacion operacion = new Operacion();
+            operacion.Codigo = "AA12H";
+            operacion.Nombre = "Prueba";
+            operacion.Descripcion = "Se tine que hacer la prueba";
+            operacion.Horas = 2;
+            operacion.Estado = true;
+            rop.Add(operacion);
 
+            Console.WriteLine("Se agrego Correctamente"); */
+
+            /* GrupoRepuesto grupoRepuesto = new GrupoRepuesto();
+            grupoRepuesto.Grupo = "Electrico";
+            grupoRepuesto.Estado = true;
+            rgr.Add(grupoRepuesto);
+            Console.WriteLine("Se agrego Correctamente"); */
+
+           /*  TipoVehiculo tipoVehiculo = new TipoVehiculo();
+            tipoVehiculo.Tipo = "Automóvil ";
+            tipoVehiculo.Descricion = "Vehiculo";
+            tipoVehiculo.Estado = true;
+            rtv.Add(tipoVehiculo);
+            Console.WriteLine("Se agrego Correctamente"); */
             
         }
     }

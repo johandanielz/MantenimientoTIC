@@ -1,0 +1,37 @@
+﻿@page
+@model presentacion.Pages.TipoVehiculoModel
+@{
+}
+<h3 class="text-center">Listado de Tipo de Vehiculos</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var tipoVehiculos in Model.tipoVehiculo)
+    {
+        <tr>
+            @if (tipoVehiculos.Estado == true)
+            {
+                <td>@tipoVehiculos.Id</td>
+                <td>@tipoVehiculos.Tipo</td>
+                <td>@tipoVehiculos.Descricion</td>
+                <td><span class="badge rounded-pill bg-primary">Activo</span></td>
+            }
+            else
+            {
+                <td>@tipoVehiculos.Id</td>
+                <td>@tipoVehiculos.Tipo</td>
+                <td>@tipoVehiculos.Descricion</td>
+                <td><span class="badge rounded-pill bg-danger">Inactivo</span></td> 
+            }
+           
+        </tr>
+    }
+ </tbody>
+</table>
