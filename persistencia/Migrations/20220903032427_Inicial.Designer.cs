@@ -9,7 +9,7 @@ using persistencia;
 
 namespace persistencia.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(AplicationsContext))]
     [Migration("20220903032427_Inicial")]
     partial class Inicial
     {

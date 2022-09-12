@@ -28,7 +28,7 @@ namespace persistencia
 
             if (tecnicoExiste == null)
             return;
-            _appContext.Remove(Idtecnico);
+            _appContext.Remove(tecnicoExiste);
             _appContext.SaveChanges();
             
         }

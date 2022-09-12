@@ -28,7 +28,7 @@ namespace persistencia
 
             if (operacionExiste == null)
             return;
-            _appContext.Remove(Idoperacion);
+            _appContext.Remove(operacionExiste);
             _appContext.SaveChanges();
             
         }

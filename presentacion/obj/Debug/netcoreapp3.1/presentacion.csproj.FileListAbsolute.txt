@@ -88,3 +88,4 @@ C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentaci
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\TipoVehiculo\TipoVehiculo.cshtml.g.cs
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Edit.cshtml.g.cs
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Info.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Delete.cshtml.g.cs

@@ -6,21 +6,24 @@
 <head>
     <link rel="stylesheet" href="~/css/Persona.css" />
 </head>
-<ol class="breadcrumb">
-    <li class="breadcrumb-item active">Sección Personas</li>
-</ol>
 
     @if (@Model.ListPersona.Id > 0 )
     {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Personas</li>
+        </ol>
         <h3>Modificar Datos</h3>
     }
     else
     {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Personas</li>
+        </ol>
         <h3>Creación de Personas</h3>
     }
 
  <div class="container" id="formList">
-    <form method="post">
+    <form method="post"  class="needs-validation" novalidate>
         <input type="hidden" asp-for="ListPersona.Id"/>
 
         <div class="row col-md-10">
@@ -28,17 +31,24 @@
                 <label class="col-form-label">Tipo de Documento</label>
             </div>
             <div class="col-md-3">
-                <select asp-for="ListPersona.Cedula" class="form-select" aria-label="Seleccione...">
-                    <option value="TI">Tarjeta de Identidad</option>
-                    <option value="CC">Cedula de Cuidadania</option>
+                <select asp-for="ListPersona.TipoDocumento" class="form-select" required>
+                    <option selected disabled value="">Seleccione...</option>
+                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                    <option value="Cedula de Cuidadania">Cedula de Cuidadania</option>
                 </select>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
             </div>
     
             <div class="col-md-2">
                 <label class="col-form-label">Numero de Documento</label>
                 </div>
             <div class="col-md-3 col-lg-3">
-                <input type="text" asp-for="ListPersona.Cedula" class="form-control">
+                <input type="text" asp-for="ListPersona.Cedula" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite su Documento
+                </div>
             </div>
         </div>
 
@@ -47,14 +57,19 @@
                 <label class="col-form-label">Nombres</label>
             </div>
             <div class="col-md-3">
-                <input type="text" asp-for="ListPersona.Nombre" class="form-control">
+                <input type="text" asp-for="ListPersona.Nombre" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite su Nombre
+                </div>
             </div>
-    
             <div class="col-md-2">
                 <label class="col-form-label">Apellidos</label>
             </div>
             <div class="col-md-3 col-lg-3">
-                <input type="text" asp-for="ListPersona.Apellido" class="form-control">
+                <input type="text" asp-for="ListPersona.Apellido" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite sus Apellidos
+                </div>
             </div>
         </div>
         <br>
@@ -64,14 +79,19 @@
                 <label class="col-form-label">Celular</label>
             </div>
             <div class="col-md-3">
-                <input type="text" asp-for="ListPersona.Celular" class="form-control">
+                <input type="text" asp-for="ListPersona.Celular" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite su Celular
+                </div>
             </div>
-    
             <div class="col-md-2">
                 <label class="col-form-label">Correo</label>
             </div>
             <div class="col-md-3 col-lg-3">
-                <input type="email" asp-for="ListPersona.Correo" class="form-control">
+                <input type="email" asp-for="ListPersona.Correo" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite su E-mail
+                </div>
             </div>
         </div>
         <br>
@@ -81,8 +101,12 @@
                 <label asp-for="ListPersona.Direccion" class="col-form-label"></label>
             </div>
             <div class="col-md-8">
-                <input type="text" asp-for="ListPersona.Direccion" class="form-control">
+                <input type="text" asp-for="ListPersona.Direccion" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite su Direccion
+                </div>
             </div>
+            
         </div>
         <br>
 
@@ -91,10 +115,14 @@
                 <label asp-for="ListPersona.Clasificacion" class="col-form-label"></label>
             </div>
             <div class="col-md-3">
-                <select asp-for="ListPersona.Clasificacion" class="form-select" aria-label="Seleccione...">
+                <select asp-for="ListPersona.Clasificacion" class="form-select" required>
+                    <option selected disabled value="">Seleccione...</option>
                     <option value="Cliente">Cliente</option>
                     <option value="Empleado">Empleado</option>
                 </select>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
             </div>
             <div class="col-md-5 col-lg-5">
                 <button type="submit" class="btn btn-outline-primary">Guardar</button>
@@ -103,3 +131,5 @@
     </form>
 </div> 
 
+
+<script src="~/js/Persona.js"></script>

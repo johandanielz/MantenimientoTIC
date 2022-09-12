@@ -28,7 +28,7 @@ namespace persistencia
 
             if (revRepuestosExiste == null)
             return;
-            _appContext.Remove(IdrevRepuestos);
+            _appContext.Remove(revRepuestosExiste);
             _appContext.SaveChanges();
             
         }

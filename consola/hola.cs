@@ -6,13 +6,13 @@ namespace consola
 {
     public class Hola
     {
-        private static IRepositorioPersona rpe = new RepositorioPersona(new AplicationsContext());
+       /*  private static IRepositorioPersona rpe = new RepositorioPersona(new AplicationsContext());
         private static IRepositorioColor rcl = new RepositorioColor(new AplicationsContext());
         private static IRepositorioMarca rma = new RepositorioMarca(new AplicationsContext());
         private static IRepositorioEstilo res = new RepositorioEstilo(new AplicationsContext());
         private static IRepositorioOperacion rop = new RepositorioOperacion(new AplicationsContext());
         private static IRepositorioGrupoRepuesto rgr = new RepositorioGrupoRepuesto(new AplicationsContext());
-        private static IRepositorioTipoVehiculo rtv = new RepositorioTipoVehiculo(new AplicationsContext());
+        private static IRepositorioTipoVehiculo rtv = new RepositorioTipoVehiculo(new AplicationsContext()); */
         static void Main(string[] args)
         {   
             /* var personas = _repo.GetAll();

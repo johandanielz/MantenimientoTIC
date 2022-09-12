@@ -28,7 +28,7 @@ namespace persistencia
 
             if (estiloExiste == null)
             return;
-            _appContext.Remove(Idestilo);
+            _appContext.Remove(estiloExiste);
             _appContext.SaveChanges();
             
         }

@@ -28,7 +28,7 @@ namespace persistencia
 
             if (personaExiste == null)
             return;
-            _appContext.Remove(Idpersona);
+            _appContext.Remove(personaExiste);
             _appContext.SaveChanges();
             
         }
@@ -49,6 +49,7 @@ namespace persistencia
             );
             if (personaEncontrada != null)
             {
+                personaEncontrada.TipoDocumento = persona.TipoDocumento;
                 personaEncontrada.Cedula = persona.Cedula;
                 personaEncontrada.Nombre = persona.Nombre;
                 personaEncontrada.Apellido = persona.Apellido;

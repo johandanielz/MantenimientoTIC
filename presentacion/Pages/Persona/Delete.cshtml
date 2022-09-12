@@ -1,0 +1,71 @@
+﻿@page
+@model MyApp.Namespace.DeleteModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Personas</li>
+</ol>
+
+<h4>Estas seguro de querer eliminar a <strong>@Model.DelPersona.Nombre?</strong></h4>
+  <div>
+    <br>
+        <div class="row" id="delete">
+            <div class="col-md-2">
+                <label><strong>Tipo de Documento</strong></label>
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DelPersona.TipoDocumento)
+            </div>
+            <div class="col-md-2">
+                <label><strong>Nombres</strong></label>
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DelPersona.Nombre)
+            </div>
+            <div class="col-md-2">
+                <label><strong>Apellidos</strong></label>
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DelPersona.Apellido)
+            </div>
+            <div class="col-md-2">
+                <label><strong>Celular</strong></label>
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DelPersona.Celular)
+            </div>
+            <div class="col-md-2">
+                <label><strong>Correo</strong></label>
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DelPersona.Correo)
+            </div>
+            <div class="col-md-2">
+                <label><strong>Direccion</strong></label>
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DelPersona.Direccion)
+            </div>
+            <div class="col-md-2">
+                <label><strong>Tipo de Persona</strong></label>
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DelPersona.Clasificacion)
+            </div>
+        </div>
+    </div>
+
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelPersona.Id">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/Delete/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Persona" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

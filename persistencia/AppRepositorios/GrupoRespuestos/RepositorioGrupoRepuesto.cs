@@ -29,7 +29,7 @@ namespace persistencia
 
             if (grupoRepuestoExiste == null)
             return;
-            _appContext.Remove(IdgrupoRepuesto);
+            _appContext.Remove(grupoRepuestoExiste);
             _appContext.SaveChanges();
             
         }

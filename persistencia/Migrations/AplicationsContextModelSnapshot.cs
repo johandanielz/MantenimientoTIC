@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using persistencia;
 
 namespace persistencia.Migrations
 {
     [DbContext(typeof(AplicationsContext))]
-    [Migration("20220903234203_Second")]
-    partial class Second
+    partial class AplicationsContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,6 +151,9 @@ namespace persistencia.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TipoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("persona");
@@ -237,7 +238,7 @@ namespace persistencia.Migrations
 
                     b.HasIndex("revision_Id");
 
-                    b.ToTable("revRespuestos");
+                    b.ToTable("revRepuestos");
                 });
 
             modelBuilder.Entity("dominio.Revision", b =>
@@ -315,7 +316,7 @@ namespace persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Descricion")
+                    b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Estado")

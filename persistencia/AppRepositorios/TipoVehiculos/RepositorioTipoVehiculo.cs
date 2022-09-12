@@ -28,7 +28,7 @@ namespace persistencia
 
             if (tipoVehiculoExiste == null)
             return;
-            _appContext.Remove(IdtipoVehiculo);
+            _appContext.Remove(tipoVehiculoExiste);
             _appContext.SaveChanges();
             
         }
@@ -51,7 +51,7 @@ namespace persistencia
             {
                 tipoVehiculoEncontrado.Estado = tipoVehiculo.Estado;
                 tipoVehiculoEncontrado.Tipo = tipoVehiculo.Tipo;
-                tipoVehiculoEncontrado.Descricion = tipoVehiculo.Descricion;
+                tipoVehiculoEncontrado.Descripcion = tipoVehiculo.Descripcion;
             }
             _appContext.SaveChanges();
             return tipoVehiculoEncontrado;

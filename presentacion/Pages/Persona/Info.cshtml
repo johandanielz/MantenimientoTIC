@@ -2,13 +2,58 @@
 @model presentacion.Pages.EditModel
 @{
 }
-@if (@Model.ListPersona.Id > 0 )
-{
-    <h1>Editar Datos De: @Model.ListPersona.Nombre</h1>
-}
-else
-{
-        <h1>Agregar Registro</h1>
-}
-<!-- Button trigger modal -->
+<head>
+    <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Personas</li>
+</ol>
+<div>
+  <h5>Datos de <strong>@Model.ListPersona.Nombre</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Tipo de Documento</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.ListPersona.TipoDocumento)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Nombres</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.ListPersona.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Apellidos</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.ListPersona.Apellido)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Celular</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.ListPersona.Celular)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Correo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.ListPersona.Correo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Direccion</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.ListPersona.Direccion)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tipo de Persona</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.ListPersona.Clasificacion)
+        </div>
+    </div>
+</div>
     

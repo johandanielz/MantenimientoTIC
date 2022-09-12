@@ -28,7 +28,7 @@ namespace persistencia
 
             if (marcaExiste == null)
             return;
-            _appContext.Remove(Idmarca);
+            _appContext.Remove(marcaExiste);
             _appContext.SaveChanges();
             
         }

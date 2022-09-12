@@ -28,7 +28,7 @@ namespace persistencia
 
             if (colorExiste == null)
             return;
-            _appContext.Remove(Idcolor);
+            _appContext.Remove(colorExiste);
             _appContext.SaveChanges();
             
         }

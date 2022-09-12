@@ -41,6 +41,10 @@ namespace presentacion.Pages
         }
         public IActionResult OnPost()
         {
+           /*  if (!ModelState.IsValid)
+            {
+                
+            } */
             if (ListPersona.Id>0)
             {
                 ListPersona = repositorioPersona.Update(ListPersona);

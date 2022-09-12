@@ -18,6 +18,26 @@ ol{
     margin-top: 1.3em;
     margin-left: 170px;
 }
-h3{
+h3,h4,h5{
     margin-left: 50px;
 }
+#delete,#info{
+    margin-left: 50px;
+}
+#tituloPersona{
+    width: 1005px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+}
+#btnAdd{
+    margin-top: 1.3em;
+    margin-left: 49px;
+    width: 230px;
+    height: 45px;
+    font-size: 16px;
+}
+
+    

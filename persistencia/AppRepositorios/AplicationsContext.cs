@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace persistencia
 {
-    public class AplicationsContext : DbContext
+    public class AplicationsContext : DbContext  
     {
         private const string connectionString = @"Data Source=LAPTOP-SOGI9E3P;Initial Catalog=MantenimientoTic;Integrated Security=True;";
 
