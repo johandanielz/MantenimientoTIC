@@ -50,8 +50,8 @@ namespace persistencia
             );
             if (grupoRepuestoEncontrado != null)
             {
-                grupoRepuestoEncontrado.Grupo = grupoRepuestoEncontrado.Grupo;
-                grupoRepuestoEncontrado.Estado = grupoRepuestoEncontrado.Estado;
+                grupoRepuestoEncontrado.Grupo = grupoRepuesto.Grupo;
+                grupoRepuestoEncontrado.Estado = grupoRepuesto.Estado;
             }
             _appContext.SaveChanges();
             return grupoRepuestoEncontrado;

@@ -1,0 +1,60 @@
+﻿@page
+@model presentacion.Pages.EditGrupoRModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/GrupoRepuesto.css" />
+</head>
+
+    @if (@Model.ListGrupoR.Id > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Grupo de Repuestos</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Grupo de Repuestos</li>
+        </ol>
+        <h3>Creación de Grupo de Repuestos</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="ListGrupoR.Id"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Grupo</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="ListGrupoR.Grupo" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite un Grupo
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                    <label class="col-form-label">Estado</label>
+            </div>
+            <div class="col-md-3">
+                    <div class="button r" id="button-6">
+                    <input type="checkbox" class="checkbox" asp-for="ListGrupoR.Estado"/>
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                    </div>
+            </div>
+         </div>
+        <br>
+        <div class="row col-md-10">
+            <div class="col-md-5 col-lg-5">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>    
+    </form>
+</div> 
+
+<script src="~/js/Persona.js"></script>

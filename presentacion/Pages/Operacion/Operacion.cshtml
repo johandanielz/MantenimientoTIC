@@ -2,16 +2,27 @@
 @model presentacion.Pages.OperacionModel
 @{
 }
-<h3 class="text-center">Listado de Operaciones</h3>
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+
+  <h3 class="text-center p-2 mb-2 breadcrumb-item active" id="tituloOperacion"><strong>Operaciones</strong></h3>
+
+  <a asp-page="EditOperacion" class="btn btn-outline-primary" id="btnAdd">
+    Agregar Operacion
+  </a>
+<br>
+<br>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">N°</th>
-      <th scope="col">Codigo</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Horas</th>
-      <th scope="col">Estado</th>
+      <th scope="col"class="text-center">N°</th>
+      <th scope="col"class="text-center">Codigo</th>
+      <th scope="col"class="text-center">Nombre</th>
+      <th scope="col"class="text-center">Descripcion</th>
+      <th scope="col"class="text-center">Horas</th>
+      <th scope="col"class="text-center">Estado</th>
+      <th colspan="3" class="text-center">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -20,23 +31,44 @@
         <tr>
             @if (operaciones.Estado == true)
             {
-                <td>@operaciones.Id</td>
-                <td>@operaciones.Codigo</td>
-                <td>@operaciones.Nombre</td>
-                <td>@operaciones.Descripcion</td>
-                <td>@operaciones.Horas</td>
-                <td><span class="badge rounded-pill bg-primary">Activo</span></td>
+                <td class="text-center">@operaciones.Id</td>
+                <td class="text-center">@operaciones.Codigo</td>
+                <td class="text-center">@operaciones.Nombre</td>
+                <td class="text-center">@operaciones.Descripcion</td>
+                <td class="text-center">@operaciones.Horas</td>
+                <td class="text-center"><span class="badge rounded-pill bg-primary">Activo</span></td>
+                <td class="text-center">
+                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoOperacion" asp-route-Idoperacion="@operaciones.Id">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </a>
+                  <a class="btn btn-outline-primary table-btn" asp-page="./EditOperacion" asp-route-Idoperacion="@operaciones.Id">
+                    <i class="fa-solid fa-user-pen"></i>
+                  </a>
+                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteOperacion" asp-route-Idoperacion="@operaciones.Id">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </a>
+              </td>
             }
             else
             {
-                <td>@operaciones.Id</td>
-                <td>@operaciones.Codigo</td>
-                <td>@operaciones.Nombre</td>
-                <td>@operaciones.Descripcion</td>
-                <td>@operaciones.Horas</td>
-                <td><span class="badge rounded-pill bg-danger">Inactivo</span></td>
-            }
-            
+                <td class="text-center">@operaciones.Id</td>
+                <td class="text-center">@operaciones.Codigo</td>
+                <td class="text-center">@operaciones.Nombre</td>
+                <td class="text-center">@operaciones.Descripcion</td>
+                <td class="text-center">@operaciones.Horas</td>
+                <td class="text-center"><span class="badge rounded-pill bg-danger">Inactivo</span></td>
+                <td class="text-center">
+                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoOperacion" asp-route-Idoperacion="@operaciones.Id">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </a>
+                  <a class="btn btn-outline-primary table-btn" asp-page="./EditOperacion" asp-route-Idoperacion="@operaciones.Id">
+                    <i class="fa-solid fa-user-pen"></i>
+                  </a>
+                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteOperacion" asp-route-Idoperacion="@operaciones.Id">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </a>
+              </td>
+            } 
         </tr>
     }
  </tbody>

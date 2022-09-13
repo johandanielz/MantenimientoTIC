@@ -1,0 +1,67 @@
+﻿@page
+@model presentacion.Pages.DeleteOperacionModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Operaciones</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar la operacion <strong>@Model.DelOperacion.Nombre?</strong></h4>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Codigo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelOperacion.Codigo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Nombre</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelOperacion.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Descripcion</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelOperacion.Descripcion)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Horas</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelOperacion.Horas)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.DelOperacion.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>
+
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelOperacion.Id">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteOperacion/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Operacion" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

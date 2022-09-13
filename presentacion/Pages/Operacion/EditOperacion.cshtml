@@ -1,0 +1,96 @@
+﻿@page
+@model presentacion.Pages.EditOperacionModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+
+    @if (@Model.EditOperacion.Id > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Operaciones</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Operaciones</li>
+        </ol>
+        <h3>Creación de Personas</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="EditOperacion.Id"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Codigo</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="EditOperacion.Codigo" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite el Codigo
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Horas</label>
+                </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="number" asp-for="EditOperacion.Horas" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite las Horas
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Nombre</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="EditOperacion.Nombre" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite el Nombre
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Estado</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="button r" id="button-6">
+                    <input type="checkbox" class="checkbox" asp-for="EditOperacion.Estado"/>
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label asp-for="EditOperacion.Descripcion" class="col-form-label"></label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" asp-for="EditOperacion.Descripcion" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite la Descripcion
+                </div>
+            </div> 
+        </div>
+      <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-5 col-lg-5">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>    
+    </form>
+</div> 
+
+
+<script src="~/js/Persona.js"></script>

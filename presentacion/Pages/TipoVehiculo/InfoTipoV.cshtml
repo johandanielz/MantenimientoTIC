@@ -1,0 +1,43 @@
+﻿@page
+@model presentacion.Pages.InfoTipoVModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/TipoVehiculo.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos Tipo de Vehiculos</li>
+</ol>
+<div>
+  <h5>Datos del tipo de vehiculo <strong>@Model.InfoTipoV.Tipo</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Tipo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoTipoV.Tipo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Descripcion</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoTipoV.Descripcion)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.InfoTipoV.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>

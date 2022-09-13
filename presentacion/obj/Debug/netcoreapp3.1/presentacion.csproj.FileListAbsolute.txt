@@ -89,3 +89,15 @@ C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentaci
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Edit.cshtml.g.cs
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Info.cshtml.g.cs
 C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Persona\Delete.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Color\EditColor.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Color\InfoColor.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Color\DeleteColor.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Operacion\EditOperacion.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\Presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Operacion\InfoOperacion.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\Operacion\DeleteOperacion.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\GrupoRepuesto\EditGrupoR.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\GrupoRepuesto\InfoGrupoR.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\GrupoRepuesto\DeleteGrupoR.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\TipoVehiculo\EditTipoV.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\TipoVehiculo\InfoTipoV.cshtml.g.cs
+C:\Users\acer\OneDrive\Escritorio\Proyecto_3er_Ciclo\MantenimientoTIC\presentacion\obj\Debug\netcoreapp3.1\Razor\Pages\TipoVehiculo\DeleteTipoV.cshtml.g.cs

@@ -1,0 +1,55 @@
+﻿@page
+@model presentacion.Pages.InfoOperacionModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Operaciones</li>
+</ol>
+<div>
+  <h5>Datos de la Operacion <strong>@Model.InfoOperacion.Nombre</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Codigo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoOperacion.Codigo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Nombre</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoOperacion.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Descripcion</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoOperacion.Descripcion)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Horas</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoOperacion.Horas)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.InfoOperacion.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@page
+@model presentacion.Pages.EditTipoVModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/TipoVehiculo.css" />
+</head>
+
+    @if (@Model.EditTipoV.Id > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Tipo de Vehiculos</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Tipo de Vehiculos</li>
+        </ol>
+        <h3>Creación de Tipo de Vehiculos</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="EditTipoV.Id"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Tipo</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="EditTipoV.Tipo" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite un tipo de Vehiculo
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Estado</label>
+                </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="button r" id="button-6">
+                    <input type="checkbox" class="checkbox" asp-for="EditTipoV.Estado"/>
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Descripcion</label>
+            </div>
+            <div class="col-md-5">
+                <input type="text" asp-for="EditTipoV.Descripcion" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite una Descripcion
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>    
+    </form>
+</div> 
+
+
+<script src="~/js/Persona.js"></script>

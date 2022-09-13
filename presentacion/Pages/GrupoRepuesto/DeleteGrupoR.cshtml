@@ -1,0 +1,49 @@
+﻿@page
+@model presentacion.Pages.DeleteGrupoRModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/GrupoRepuesto.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Grupo Repuestos</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar el grupo <strong>@Model.DelGrupoR.Grupo?</strong></h4>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Grupo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelGrupoR.Grupo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.DelGrupoR.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>
+
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelGrupoR.Id">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteGrupoR/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./GrupoRepuesto" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

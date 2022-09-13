@@ -1,0 +1,37 @@
+﻿@page
+@model presentacion.Pages.InfoGrupoRModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/GrupoRepuesto.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Grupo Repuestos</li>
+</ol>
+<div>
+  <h5>Datos del Grupo <strong>@Model.InfoGrupoR.Grupo</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Grupo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoGrupoR.Grupo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.InfoGrupoR.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>
