@@ -6,7 +6,7 @@ namespace persistencia
 {
     public class AplicationsContext : DbContext  
     {
-        private const string connectionString = @"Data Source=LAPTOP-SOGI9E3P;Initial Catalog=MantenimientoTic;Integrated Security=True;";
+        private const string connectionString = @"Data Source=LAPTOP-SOGI9E3P;Initial Catalog=MantenimientoBd;Integrated Security=True;";
 
         public DbSet<Persona> persona {get; set;}
         public DbSet<Usuario> usuario {get; set;}
@@ -19,9 +19,9 @@ namespace persistencia
         public DbSet<Repuesto> repuesto {get; set;}
         public DbSet<GrupoRepuesto> grupoRepuesto {get; set;}
         public DbSet<RevRepuestos> revRepuestos {get; set;} 
-        public DbSet<Marca> marca {get;set;}
         public DbSet<Color> color {get;set;}
         public DbSet<Estilo> estilo {get;set;}
+        public DbSet<Marca> marca {get;set;}
 
         public AplicationsContext(){}
 

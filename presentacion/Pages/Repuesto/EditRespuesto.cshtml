@@ -1,0 +1,135 @@
+﻿@page
+@model presentacion.Pages.EditRespuestoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/TipoVehiculo.css" />
+</head>
+
+    @if (@Model.EditRepuesto.Id > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Repuestos</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Repuestos</li>
+        </ol>
+        <h3>Creación de Repuestos</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="EditRepuesto.Id"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Referencia</label>
+            </div>
+            <div class="col-md-3">
+                 <input type="text" asp-for="EditRepuesto.Referencia" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por digite una Referencia
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Nombre del Producto</label>
+                </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="text" asp-for="EditRepuesto.Producto" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite el nombre del Producto
+                </div>
+            </div>
+        </div>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Tipo</label>
+            </div>
+            <div class="col-md-3">
+                <select asp-for="EditRepuesto.Tipo" class="form-select" required>
+                    <option selected disabled value="">Seleccione...</option>
+                    <option value="Generico">Generico</option>
+                    <option value="Original">Original</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por selecione una Opcion
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Costo</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="text" asp-for="EditRepuesto.Costo" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite el Costo
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Precio</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="EditRepuesto.Precio" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite el Precio
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Cantidad</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="number" asp-for="EditRepuesto.Cantidad" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor la Cantidad
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Grupo</label>
+            </div>
+            <div class="col-md-3">
+                <select  class="form-select" required>
+                    @foreach (var grupo in Model.GRrepuesto)
+                    {
+                        <option value="@grupo.Id">@grupo.Grupo</option>
+                    }
+                </select>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Estado</label>
+                </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="button r" id="button-6">
+                    <input type="checkbox" class="checkbox" asp-for="EditRepuesto.Estado"/>
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+        </div>
+
+      
+            <div class="col-md-5">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+           
+    </form>
+</div> 
+
+
+<script src="~/js/Persona.js"></script>

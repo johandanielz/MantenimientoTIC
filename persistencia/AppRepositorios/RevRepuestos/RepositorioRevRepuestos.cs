@@ -49,8 +49,8 @@ namespace persistencia
             );
             if (revRepuestosEncontrados != null)
             {
-                revRepuestosEncontrados.repuesto_ = revRepuestos.repuesto_;
-                revRepuestosEncontrados.revision_ = revRepuestos.revision_;
+                revRepuestosEncontrados.repuesto = revRepuestos.repuesto;
+                revRepuestosEncontrados.revision = revRepuestos.revision;
             }
             _appContext.SaveChanges();
             return revRepuestosEncontrados;

@@ -1,5 +1,6 @@
 ﻿using System;
 /* using System.ComponentModel.DataAnnotations; */
+using System.Collections.Generic;
 
 namespace dominio
 {
@@ -23,6 +24,7 @@ namespace dominio
         /* [Required, StringLength(15)] */
         public string Clasificacion {get; set;}
 
+        public System.Collections.Generic.List<Vehiculo> vehiculo {get; set;}
         /* public string ingresar(){
             return "Ingresé al sistema";
         } */

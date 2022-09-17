@@ -1,0 +1,122 @@
+﻿@page
+@model presentacion.Pages.AggVehiculoModel
+@{
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Agregar Vehiculo</li>
+</ol>
+<h3>Creación de Vehiculos</h3>
+
+<div class="container" id="formList">
+    <form method="post" class="needs-validation" novalidate>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Placa</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="vehiculo.Placa" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite su Matricula
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <label class="col-form-label">Modelo</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="text" asp-for="vehiculo.Modelo" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite el Modelo
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Servicio</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="vehiculo.Servicio" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite el Servicio
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Color</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <select onchange="Mostrar()" id="colorName" class="form-select" asp-for="vehiculo.color" asp-items="Model.nombreColor" required>
+                        <option selected>Seleccione un color...</option>
+                </select>
+                <input type="hidden" id="Ncolor" name="colorNames" class="type">
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Estilo</label>
+            </div>
+            <div class="col-md-3">
+               
+                 @foreach (var estilos in Model.estilo)
+                {
+                   <select  class="form-select" asp-for="vehiculo.EstiloId" required>
+                        <option value="@estilos.Id">@estilos.Nombre</option>
+                   </select> 
+                } 
+            </div>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Marca</label>
+            </div>
+            <div class="col-md-5 col-lg-5">
+                @foreach (var marcas in Model.marca)
+                {
+                   <select  class="form-select" asp-for="vehiculo.MarcaId" required>
+                        <option value="@marcas.Id">@marcas.Nombre</option>
+                   </select> 
+                }      
+                
+            </div>
+        </div>
+        <br>
+        <div class="col-md-2">
+                <label class="col-form-label">Tipo Vehiculo</label>
+            </div>
+            <div class="col-md-3">
+               
+                     @foreach (var tipoV in Model.tipoVehiculo)
+                {
+                   <select  class="form-select" asp-for="vehiculo.TipoVehiculoId" required>
+                        <option value="@tipoV.Id">@tipoV.Tipo</option>
+                   </select> 
+                } 
+                
+            </div>
+        <div class="col-md-5 col-lg-5">
+            
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                <a asp-page="/Vehiculo/Vehiculo" type="button" class="btn btn-outline-secondary">Volver</a>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function Mostrar(){
+        var dato = document.getElementById("colorName");
+        var seleccion = dato.options[dato.selectedIndex].text;
+        document.getElementById("Ncolor").value = seleccion;
+    }
+</script>

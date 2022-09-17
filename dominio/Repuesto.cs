@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace dominio
 {
@@ -12,6 +14,10 @@ namespace dominio
         public int Precio {get; set;}
         public int Cantidad {get; set;}
         public bool Estado {get; set;}
-        public GrupoRepuesto grupo_ {get; set;}
+
+        [ForeignKey("GrupoRepuesto")]
+        public int GrupoRId {get;set;}
+
+        public virtual GrupoRepuesto GrupoRepuesto {get;set;}
     }
 }

@@ -6,7 +6,7 @@ namespace dominio
     {
         public int Id {get; set;}
         public bool Estado {get; set;}
-        public TipoVehiculo tipo_vehiculo_ {get; set;}
-        public Persona persona_ {get; set;}
+        public TipoVehiculo tipo_vehiculo {get; set;}
+        public Persona persona {get; set;}
     }
 }

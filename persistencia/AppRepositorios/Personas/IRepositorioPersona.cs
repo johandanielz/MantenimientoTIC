@@ -13,5 +13,7 @@ namespace persistencia
         void Delete(int Idpersona);
         Persona Get(int Idpersona);
         IEnumerable<Persona> GetAll();
+        Persona GetCedula(string Cedula);
+       
     }
 }

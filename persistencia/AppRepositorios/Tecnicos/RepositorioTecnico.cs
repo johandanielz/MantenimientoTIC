@@ -50,8 +50,8 @@ namespace persistencia
             if (tecnicoEncontrado != null)
             {
                 tecnicoEncontrado.Estado = tecnico.Estado;
-                tecnicoEncontrado.tipo_vehiculo_ = tecnico.tipo_vehiculo_;
-                tecnicoEncontrado.persona_ = tecnico.persona_;
+                tecnicoEncontrado.tipo_vehiculo = tecnico.tipo_vehiculo;
+                tecnicoEncontrado.persona = tecnico.persona;
             }
             _appContext.SaveChanges();
             return tecnicoEncontrado;

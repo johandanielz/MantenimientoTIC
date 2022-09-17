@@ -118,7 +118,7 @@
                 <select asp-for="ListPersona.Clasificacion" class="form-select" required>
                     <option selected disabled value="">Seleccione...</option>
                     <option value="Cliente">Cliente</option>
-                    <option value="Empleado">Empleado</option>
+                    <option value="Empleado">Tecnico</option>
                 </select>
                 <div class="invalid-feedback">
                     Por favor seleccion una opcion
@@ -126,6 +126,7 @@
             </div>
             <div class="col-md-5 col-lg-5">
                 <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                <a asp-page="/Vehiculo/AggVehiculo" class="btn btn-outline-dark" asp-route-Idpersona="@Model.ListPersona.Id">Agregar Vehiculo</a>
             </div>
         </div>    
     </form>

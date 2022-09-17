@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using dominio;
+using Microsoft.EntityFrameworkCore;
+
+namespace persistencia
+{
+    public class RepositorioVehiculo : IRepositorioVehiculo
+    {
+        private readonly AplicationsContext _appContext;
+
+        public RepositorioVehiculo(AplicationsContext appContext)
+        {
+            _appContext = appContext;
+        }
+        //Agregar
+        Vehiculo IRepositorioVehiculo.Add(Vehiculo vehiculo){
+            var new_vehiculo = _appContext.vehiculo.Add(vehiculo);
+            _appContext.SaveChanges();
+            return new_vehiculo.Entity; //devuelve la entiendad completa qeu ser guardo
+        }
+        //Eliminar
+        void IRepositorioVehiculo.Delete(int Idvehiculo){
+            var vehiculoExiste = _appContext.vehiculo.FirstOrDefault(
+                v => v.Id == Idvehiculo
+            );
+
+            if (vehiculoExiste == null)
+            return;
+            _appContext.Remove(vehiculoExiste);
+            _appContext.SaveChanges();
+            
+        }
+        //Obtener todos los registros
+        IEnumerable<Vehiculo> IRepositorioVehiculo.GetAll(){
+            return _appContext.vehiculo.Include(c => c.color).Include(c => c.estilo).Include(c => c.marca);
+        }
+        IEnumerable<Color> IRepositorioVehiculo.GetColorTrue(){
+            return _appContext.color.Where(c => c.Estado == true).ToList();
+        }
+        //Obtener un solo registro
+        Vehiculo IRepositorioVehiculo.Get(int Idvehiculo){
+            return _appContext.vehiculo.FirstOrDefault(
+                v => v.Id == Idvehiculo
+            );
+        }
+        //Actualizar
+        Vehiculo IRepositorioVehiculo.Update(Vehiculo vehiculo){
+            var vehiculoEncontrado = _appContext.vehiculo.FirstOrDefault(
+                v => v.Id == vehiculo.Id
+            );
+            if (vehiculoEncontrado != null)
+            {
+                vehiculoEncontrado.Placa = vehiculo.Placa;
+                vehiculoEncontrado.Modelo = vehiculo.Modelo;
+                vehiculoEncontrado.Servicio = vehiculo.Servicio;
+                vehiculoEncontrado.tipoVehiculo = vehiculo.tipoVehiculo;
+                vehiculoEncontrado.estilo = vehiculo.estilo;
+                vehiculoEncontrado.color = vehiculo.color;
+            }
+            _appContext.SaveChanges();
+            return vehiculoEncontrado;
+        }
+    }
+}

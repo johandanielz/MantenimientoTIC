@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System;
 using dominio;
 using persistencia;
@@ -13,6 +14,7 @@ namespace consola
         private static IRepositorioOperacion rop = new RepositorioOperacion(new AplicationsContext());
         private static IRepositorioGrupoRepuesto rgr = new RepositorioGrupoRepuesto(new AplicationsContext());
         private static IRepositorioTipoVehiculo rtv = new RepositorioTipoVehiculo(new AplicationsContext());
+        private static IRepositorioRepuesto rr = new RepositorioRepuesto(new AplicationsContext());
         static void Main(string[] args)
         {   
             /* var personas = _repo.GetAll();
@@ -20,11 +22,11 @@ namespace consola
             {
                 Console.WriteLine(persona.Nombre);
             } */
-            Color color = new Color();
+            /* Color color = new Color();
             color.Nombre = "Amarillo";
             color.Estado = true;
             rcl.Add(color);
-            Console.WriteLine("Se agrego Correctamente");
+            Console.WriteLine("Se agrego Correctamente"); */
 
             /* Marca marca = new Marca();
             marca.Nombre = "Lamborghini";
@@ -67,7 +69,31 @@ namespace consola
             tipoVehiculo.Estado = true;
             rtv.Add(tipoVehiculo);
             Console.WriteLine("Se agrego Correctamente"); */
-            
+
+
+            /* GrupoRepuesto gRepuesto = new GrupoRepuesto();
+            gRepuesto.Grupo = "Electrico";
+            gRepuesto.Estado = true;
+            gRepuesto.Repuestos = new List<Repuesto>{
+                new Repuesto{Referencia= "AAHH",Producto = "Bueno", Tipo ="Generico", Costo= 1000, Precio=2000,Cantidad=1,Estado=true},
+                new Repuesto{Referencia= "AAJJ",Producto = "Bueno2", Tipo ="Original", Costo= 1000, Precio=2000,Cantidad=1,Estado=false}
+            };
+            rgr.Add(gRepuesto);
+            Console.WriteLine("Se agrego Correctamente");   */
+
+           /*  var repuestos = rgr.GetAll();
+            foreach (var ree in repuestos)
+            {
+                Console.WriteLine(ree.Grupo);
+                Console.WriteLine(ree.Estado);
+                foreach (var item in repuesto)
+                {
+                    Console.WriteLine(item.Producto);
+                }
+                
+                Console.WriteLine("--------------------\n");
+            }  */
+        
         }
     }
 }

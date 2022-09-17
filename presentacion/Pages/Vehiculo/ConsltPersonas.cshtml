@@ -1,0 +1,106 @@
+﻿@page
+@model presentacion.Pages.ConsltPersonasModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Sección Validar Persona para Asignarle un Vehiculo</li>
+    </ol>
+    <h3>Validar Personas</h3>
+
+ <div class="container" id="formList">
+    <form method="post" class="d-flex">
+        <div class="row col-md-10">
+            <span>Digite El Documento que Desea Buscar</span>
+            <div class="col-md-5">
+                <input asp-for="ListPersona.Cedula" class="form-control me-2" type="search" placeholder="Documento De Identidad" aria-label="Search">
+            </div>
+            <div class="col-md-3 col-lg-3">
+                 <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    @if (@Model.ListPersona != null)  
+    {
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Tipo de Documento</label>
+            </div>
+            <div class="col-md-3">
+                 <input type="text" asp-for="ListPersona.TipoDocumento" class="form-control" disabled>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Numero de Documento</label>
+                </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="text" asp-for="ListPersona.Cedula" class="form-control" disabled>
+            </div>
+        </div>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Nombres</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="ListPersona.Nombre" class="form-control" disabled>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Apellidos</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="text" asp-for="ListPersona.Apellido" class="form-control" disabled>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Celular</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="ListPersona.Celular" class="form-control" disabled>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Correo</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="email" asp-for="ListPersona.Correo" class="form-control" disabled>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label asp-for="ListPersona.Direccion" class="col-form-label"></label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" asp-for="ListPersona.Direccion" class="form-control" disabled>
+            </div>
+            
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label asp-for="ListPersona.Clasificacion" class="col-form-label"></label>
+            </div>
+            <div class="col-md-3">
+                 <input type="text" asp-for="ListPersona.Clasificacion" class="form-control" disabled>
+            </div>
+            <div class="col-md-5 col-lg-5">
+                <a asp-page="/Vehiculo/AggVehiculo" class="btn btn-outline-dark" asp-route-Idpersona="@Model.ListPersona.Id">Agregar Vehiculo</a>
+            </div>
+        </div>
+    }else
+    {
+        <h2>No se encontro el documento</h2>
+    }   
+</div>

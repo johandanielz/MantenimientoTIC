@@ -49,8 +49,8 @@ namespace persistencia
             );
             if (revOperacionesEncontradas != null)
             {
-                revOperacionesEncontradas.operacion_ = revOperaciones.operacion_;
-                revOperacionesEncontradas.revision_ = revOperaciones.revision_;
+                revOperacionesEncontradas.operacion = revOperaciones.operacion;
+                revOperacionesEncontradas.revision = revOperaciones.revision;
             }
             _appContext.SaveChanges();
             return revOperacionesEncontradas;

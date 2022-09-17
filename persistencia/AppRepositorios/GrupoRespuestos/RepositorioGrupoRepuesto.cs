@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dominio;
+using Microsoft.EntityFrameworkCore;
 
 namespace persistencia
 {
@@ -35,7 +36,7 @@ namespace persistencia
         }
         //Obtener todos los registros
         IEnumerable<GrupoRepuesto> IRepositorioGrupoRepuesto.GetAll(){
-            return _appContext.grupoRepuesto;
+            return _appContext.grupoRepuesto.Include(r => r.repuesto);
         }
         //Obtener un solo registro
         GrupoRepuesto IRepositorioGrupoRepuesto.Get(int IdgrupoRepuesto){

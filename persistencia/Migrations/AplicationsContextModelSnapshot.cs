@@ -50,12 +50,7 @@ namespace persistencia.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("marca_Id")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("marca_Id");
 
                     b.ToTable("estilo");
                 });
@@ -175,6 +170,9 @@ namespace persistencia.Migrations
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
 
+                    b.Property<int>("GrupoRId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
@@ -187,12 +185,9 @@ namespace persistencia.Migrations
                     b.Property<string>("Tipo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("grupo_Id")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("grupo_Id");
+                    b.HasIndex("GrupoRId");
 
                     b.ToTable("repuesto");
                 });
@@ -204,17 +199,17 @@ namespace persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("operacion_Id")
+                    b.Property<int?>("operacionId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("revision_Id")
+                    b.Property<int?>("revisionId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("operacion_Id");
+                    b.HasIndex("operacionId");
 
-                    b.HasIndex("revision_Id");
+                    b.HasIndex("revisionId");
 
                     b.ToTable("revOperaciones");
                 });
@@ -226,17 +221,17 @@ namespace persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("repuesto_Id")
+                    b.Property<int?>("repuestoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("revision_Id")
+                    b.Property<int?>("revisionId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("repuesto_Id");
+                    b.HasIndex("repuestoId");
 
-                    b.HasIndex("revision_Id");
+                    b.HasIndex("revisionId");
 
                     b.ToTable("revRepuestos");
                 });
@@ -269,17 +264,17 @@ namespace persistencia.Migrations
                     b.Property<string>("Sintomas")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("tecnico_Id")
+                    b.Property<int?>("tecnicoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("vehiculo_Id")
+                    b.Property<int?>("vehiculoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("tecnico_Id");
+                    b.HasIndex("tecnicoId");
 
-                    b.HasIndex("vehiculo_Id");
+                    b.HasIndex("vehiculoId");
 
                     b.ToTable("revision");
                 });
@@ -294,17 +289,17 @@ namespace persistencia.Migrations
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("persona_Id")
+                    b.Property<int?>("personaId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("tipo_vehiculo_Id")
+                    b.Property<int?>("tipo_vehiculoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("persona_Id");
+                    b.HasIndex("personaId");
 
-                    b.HasIndex("tipo_vehiculo_Id");
+                    b.HasIndex("tipo_vehiculoId");
 
                     b.ToTable("tecnico");
                 });
@@ -349,12 +344,12 @@ namespace persistencia.Migrations
                     b.Property<string>("User")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("persona_Id")
+                    b.Property<int?>("personaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("persona_Id");
+                    b.HasIndex("personaId");
 
                     b.ToTable("usuario");
                 });
@@ -366,8 +361,17 @@ namespace persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("EstiloId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MarcaId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Modelo")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PersonaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Placa")
                         .HasColumnType("nvarchar(max)");
@@ -375,143 +379,170 @@ namespace persistencia.Migrations
                     b.Property<string>("Servicio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("color_Id")
+                    b.Property<int>("TipoVehiculoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("estilo_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("persona_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("tipo_vehiculo_Id")
+                    b.Property<int?>("colorId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("color_Id");
+                    b.HasIndex("EstiloId")
+                        .IsUnique();
 
-                    b.HasIndex("estilo_Id");
+                    b.HasIndex("MarcaId")
+                        .IsUnique();
 
-                    b.HasIndex("persona_Id");
+                    b.HasIndex("PersonaId");
 
-                    b.HasIndex("tipo_vehiculo_Id");
+                    b.HasIndex("TipoVehiculoId")
+                        .IsUnique();
+
+                    b.HasIndex("colorId");
 
                     b.ToTable("vehiculo");
                 });
 
-            modelBuilder.Entity("dominio.Estilo", b =>
-                {
-                    b.HasOne("dominio.Marca", "marca_")
-                        .WithMany()
-                        .HasForeignKey("marca_Id");
-
-                    b.Navigation("marca_");
-                });
-
             modelBuilder.Entity("dominio.Repuesto", b =>
                 {
-                    b.HasOne("dominio.GrupoRepuesto", "grupo_")
-                        .WithMany()
-                        .HasForeignKey("grupo_Id");
+                    b.HasOne("dominio.GrupoRepuesto", "GrupoRepuesto")
+                        .WithMany("repuesto")
+                        .HasForeignKey("GrupoRId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("grupo_");
+                    b.Navigation("GrupoRepuesto");
                 });
 
             modelBuilder.Entity("dominio.RevOperaciones", b =>
                 {
-                    b.HasOne("dominio.Operacion", "operacion_")
+                    b.HasOne("dominio.Operacion", "operacion")
                         .WithMany()
-                        .HasForeignKey("operacion_Id");
+                        .HasForeignKey("operacionId");
 
-                    b.HasOne("dominio.Revision", "revision_")
+                    b.HasOne("dominio.Revision", "revision")
                         .WithMany()
-                        .HasForeignKey("revision_Id");
+                        .HasForeignKey("revisionId");
 
-                    b.Navigation("operacion_");
+                    b.Navigation("operacion");
 
-                    b.Navigation("revision_");
+                    b.Navigation("revision");
                 });
 
             modelBuilder.Entity("dominio.RevRepuestos", b =>
                 {
-                    b.HasOne("dominio.Repuesto", "repuesto_")
+                    b.HasOne("dominio.Repuesto", "repuesto")
                         .WithMany()
-                        .HasForeignKey("repuesto_Id");
+                        .HasForeignKey("repuestoId");
 
-                    b.HasOne("dominio.Revision", "revision_")
+                    b.HasOne("dominio.Revision", "revision")
                         .WithMany()
-                        .HasForeignKey("revision_Id");
+                        .HasForeignKey("revisionId");
 
-                    b.Navigation("repuesto_");
+                    b.Navigation("repuesto");
 
-                    b.Navigation("revision_");
+                    b.Navigation("revision");
                 });
 
             modelBuilder.Entity("dominio.Revision", b =>
                 {
-                    b.HasOne("dominio.Tecnico", "tecnico_")
+                    b.HasOne("dominio.Tecnico", "tecnico")
                         .WithMany()
-                        .HasForeignKey("tecnico_Id");
+                        .HasForeignKey("tecnicoId");
 
-                    b.HasOne("dominio.Vehiculo", "vehiculo_")
+                    b.HasOne("dominio.Vehiculo", "vehiculo")
                         .WithMany()
-                        .HasForeignKey("vehiculo_Id");
+                        .HasForeignKey("vehiculoId");
 
-                    b.Navigation("tecnico_");
+                    b.Navigation("tecnico");
 
-                    b.Navigation("vehiculo_");
+                    b.Navigation("vehiculo");
                 });
 
             modelBuilder.Entity("dominio.Tecnico", b =>
                 {
-                    b.HasOne("dominio.Persona", "persona_")
+                    b.HasOne("dominio.Persona", "persona")
                         .WithMany()
-                        .HasForeignKey("persona_Id");
+                        .HasForeignKey("personaId");
 
-                    b.HasOne("dominio.TipoVehiculo", "tipo_vehiculo_")
+                    b.HasOne("dominio.TipoVehiculo", "tipo_vehiculo")
                         .WithMany()
-                        .HasForeignKey("tipo_vehiculo_Id");
+                        .HasForeignKey("tipo_vehiculoId");
 
-                    b.Navigation("persona_");
+                    b.Navigation("persona");
 
-                    b.Navigation("tipo_vehiculo_");
+                    b.Navigation("tipo_vehiculo");
                 });
 
             modelBuilder.Entity("dominio.Usuario", b =>
                 {
-                    b.HasOne("dominio.Persona", "persona_")
+                    b.HasOne("dominio.Persona", "persona")
                         .WithMany()
-                        .HasForeignKey("persona_Id");
+                        .HasForeignKey("personaId");
 
-                    b.Navigation("persona_");
+                    b.Navigation("persona");
                 });
 
             modelBuilder.Entity("dominio.Vehiculo", b =>
                 {
-                    b.HasOne("dominio.Color", "color_")
+                    b.HasOne("dominio.Estilo", "estilo")
+                        .WithOne("vehiculo")
+                        .HasForeignKey("dominio.Vehiculo", "EstiloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dominio.Marca", "marca")
+                        .WithOne("vehiculo")
+                        .HasForeignKey("dominio.Vehiculo", "MarcaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dominio.Persona", null)
+                        .WithMany("vehiculo")
+                        .HasForeignKey("PersonaId");
+
+                    b.HasOne("dominio.TipoVehiculo", "tipoVehiculo")
+                        .WithOne("vehiculo")
+                        .HasForeignKey("dominio.Vehiculo", "TipoVehiculoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dominio.Color", "color")
                         .WithMany()
-                        .HasForeignKey("color_Id");
+                        .HasForeignKey("colorId");
 
-                    b.HasOne("dominio.Estilo", "estilo_")
-                        .WithMany()
-                        .HasForeignKey("estilo_Id");
+                    b.Navigation("color");
 
-                    b.HasOne("dominio.Persona", "persona_")
-                        .WithMany()
-                        .HasForeignKey("persona_Id");
+                    b.Navigation("estilo");
 
-                    b.HasOne("dominio.TipoVehiculo", "tipo_vehiculo_")
-                        .WithMany()
-                        .HasForeignKey("tipo_vehiculo_Id");
+                    b.Navigation("marca");
 
-                    b.Navigation("color_");
+                    b.Navigation("tipoVehiculo");
+                });
 
-                    b.Navigation("estilo_");
+            modelBuilder.Entity("dominio.Estilo", b =>
+                {
+                    b.Navigation("vehiculo");
+                });
 
-                    b.Navigation("persona_");
+            modelBuilder.Entity("dominio.GrupoRepuesto", b =>
+                {
+                    b.Navigation("repuesto");
+                });
 
-                    b.Navigation("tipo_vehiculo_");
+            modelBuilder.Entity("dominio.Marca", b =>
+                {
+                    b.Navigation("vehiculo");
+                });
+
+            modelBuilder.Entity("dominio.Persona", b =>
+                {
+                    b.Navigation("vehiculo");
+                });
+
+            modelBuilder.Entity("dominio.TipoVehiculo", b =>
+                {
+                    b.Navigation("vehiculo");
                 });
 #pragma warning restore 612, 618
         }

@@ -54,7 +54,7 @@ namespace persistencia
                 usuarioEncontrado.Password = usuario.Password;
                 usuarioEncontrado.Password = usuario.Password;
                 usuarioEncontrado.Estado = usuario.Estado;
-                usuarioEncontrado.persona_ = usuario.persona_;
+                usuarioEncontrado.persona = usuario.persona;
             }
             _appContext.SaveChanges();
             return usuarioEncontrado;

@@ -42,6 +42,9 @@ namespace persistencia
                 r => r.Id == Idrepuesto
             );
         }
+        IEnumerable<GrupoRepuesto> IRepositorioRepuesto.GetGrupoRespuestoTrue(){
+            return _appContext.grupoRepuesto.Where(gr => gr.Estado == true).ToList();
+        }
         //Actualizar
         Repuesto IRepositorioRepuesto.Update(Repuesto repuesto){
             var repuestoEncontrado = _appContext.repuesto.FirstOrDefault(
@@ -56,7 +59,6 @@ namespace persistencia
                 repuestoEncontrado.Precio = repuesto.Precio;
                 repuestoEncontrado.Cantidad = repuesto.Cantidad;
                 repuestoEncontrado.Estado = repuesto.Estado;
-                repuestoEncontrado.grupo_ = repuesto.grupo_;
             }
             _appContext.SaveChanges();
             return repuestoEncontrado;

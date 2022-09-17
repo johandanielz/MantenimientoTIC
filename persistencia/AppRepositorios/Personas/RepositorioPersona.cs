@@ -18,7 +18,7 @@ namespace persistencia
         Persona IRepositorioPersona.Add(Persona persona){
             var new_persona = _appContext.persona.Add(persona);
             _appContext.SaveChanges();
-            return new_persona.Entity; //devuelve la entiendad completa qeu ser guardo
+            return new_persona.Entity; //devuelve la entiendad completa que ser guardo
         }
         //Eliminar
         void IRepositorioPersona.Delete(int Idpersona){
@@ -40,6 +40,12 @@ namespace persistencia
         Persona IRepositorioPersona.Get(int Idpersona){
             return _appContext.persona.FirstOrDefault(
                 p => p.Id == Idpersona
+            );
+        }
+        //Obtener un solo registro por cedula
+        Persona IRepositorioPersona.GetCedula(string Cedula){
+            return _appContext.persona.FirstOrDefault(
+                p => p.Cedula == Cedula
             );
         }
         //Actualizar

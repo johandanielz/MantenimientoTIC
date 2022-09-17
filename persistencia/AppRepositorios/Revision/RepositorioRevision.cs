@@ -56,8 +56,8 @@ namespace persistencia
                 revisionEncontrada.Fecha_fin = revision.Fecha_fin;
                 revisionEncontrada.Estado = revision.Estado;
                 revisionEncontrada.Sintomas = revision.Sintomas;
-                revisionEncontrada.vehiculo_ = revision.vehiculo_;
-                revisionEncontrada.tecnico_ = revision.tecnico_;
+                revisionEncontrada.vehiculo = revision.vehiculo;
+                revisionEncontrada.tecnico = revision.tecnico;
             }
             _appContext.SaveChanges();
             return revisionEncontrada;

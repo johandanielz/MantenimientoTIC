@@ -13,5 +13,7 @@ namespace persistencia
         void Delete(int Idrepuesto);
         Repuesto Get(int Idrepuesto);
         IEnumerable<Repuesto> GetAll();
+        IEnumerable<GrupoRepuesto> GetGrupoRespuestoTrue();
+       
     }
 }
