@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioTecnico.Delete(int Idtecnico){
             var tecnicoExiste = _appContext.tecnico.FirstOrDefault(
-                t => t.Id == Idtecnico
+                t => t.TecnicoId == Idtecnico
             );
 
             if (tecnicoExiste == null)
@@ -39,18 +39,17 @@ namespace persistencia
         //Obtener un solo registro
         Tecnico IRepositorioTecnico.Get(int Idtecnico){
             return _appContext.tecnico.FirstOrDefault(
-                t => t.Id == Idtecnico
+                t => t.TecnicoId == Idtecnico
             );
         }
         //Actualizar
         Tecnico IRepositorioTecnico.Update(Tecnico tecnico){
             var tecnicoEncontrado = _appContext.tecnico.FirstOrDefault(
-                t => t.Id == tecnico.Id
+                t => t.TecnicoId == tecnico.TecnicoId
             );
             if (tecnicoEncontrado != null)
             {
                 tecnicoEncontrado.Estado = tecnico.Estado;
-                tecnicoEncontrado.tipo_vehiculo = tecnico.tipo_vehiculo;
                 tecnicoEncontrado.persona = tecnico.persona;
             }
             _appContext.SaveChanges();

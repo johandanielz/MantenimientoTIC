@@ -13,6 +13,6 @@ namespace persistencia
         GrupoRepuesto Update(GrupoRepuesto grupoRepuesto);
         void Delete(int IdgrupoRepuesto);
         GrupoRepuesto Get(int IdgrupoRepuesto);
-        IEnumerable<GrupoRepuesto> GetAll();
+       /*  IEnumerable<GrupoRepuesto> GetAll(); */
     }
 }

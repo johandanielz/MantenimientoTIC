@@ -31,40 +31,40 @@
         <tr>
             @if (operaciones.Estado == true)
             {
-                <td class="text-center">@operaciones.Id</td>
+                <td class="text-center">@operaciones.OperacionId</td>
                 <td class="text-center">@operaciones.Codigo</td>
                 <td class="text-center">@operaciones.Nombre</td>
                 <td class="text-center">@operaciones.Descripcion</td>
                 <td class="text-center">@operaciones.Horas</td>
                 <td class="text-center"><span class="badge rounded-pill bg-primary">Activo</span></td>
                 <td class="text-center">
-                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoOperacion" asp-route-Idoperacion="@operaciones.Id">
+                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoOperacion" asp-route-Idoperacion="@operaciones.OperacionId">
                     <i class="fa-solid fa-circle-info"></i>
                   </a>
-                  <a class="btn btn-outline-primary table-btn" asp-page="./EditOperacion" asp-route-Idoperacion="@operaciones.Id">
+                  <a class="btn btn-outline-primary table-btn" asp-page="./EditOperacion" asp-route-Idoperacion="@operaciones.OperacionId">
                     <i class="fa-solid fa-user-pen"></i>
                   </a>
-                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteOperacion" asp-route-Idoperacion="@operaciones.Id">
+                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteOperacion" asp-route-Idoperacion="@operaciones.OperacionId">
                     <i class="fa-solid fa-trash-can"></i>
                   </a>
               </td>
             }
             else
             {
-                <td class="text-center">@operaciones.Id</td>
+                <td class="text-center">@operaciones.OperacionId</td>
                 <td class="text-center">@operaciones.Codigo</td>
                 <td class="text-center">@operaciones.Nombre</td>
                 <td class="text-center">@operaciones.Descripcion</td>
                 <td class="text-center">@operaciones.Horas</td>
                 <td class="text-center"><span class="badge rounded-pill bg-danger">Inactivo</span></td>
                 <td class="text-center">
-                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoOperacion" asp-route-Idoperacion="@operaciones.Id">
+                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoOperacion" asp-route-Idoperacion="@operaciones.OperacionId">
                     <i class="fa-solid fa-circle-info"></i>
                   </a>
-                  <a class="btn btn-outline-primary table-btn" asp-page="./EditOperacion" asp-route-Idoperacion="@operaciones.Id">
+                  <a class="btn btn-outline-primary table-btn" asp-page="./EditOperacion" asp-route-Idoperacion="@operaciones.OperacionId">
                     <i class="fa-solid fa-user-pen"></i>
                   </a>
-                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteOperacion" asp-route-Idoperacion="@operaciones.Id">
+                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteOperacion" asp-route-Idoperacion="@operaciones.OperacionId">
                     <i class="fa-solid fa-trash-can"></i>
                   </a>
               </td>

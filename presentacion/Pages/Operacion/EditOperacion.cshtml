@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="~/css/Operacion.css" />
 </head>
 
-    @if (@Model.EditOperacion.Id > 0 )
+    @if (@Model.EditOperacion.OperacionId > 0 )
     {
         <ol class="breadcrumb">
             <li class="breadcrumb-item active">Sección Actualizar Operaciones</li>
@@ -23,7 +23,7 @@
 
  <div class="container" id="formList">
     <form method="post"  class="needs-validation" novalidate>
-        <input type="hidden" asp-for="EditOperacion.Id"/>
+        <input type="hidden" asp-for="EditOperacion.OperacionId"/>
 
         <div class="row col-md-10">
             <div class="col-md-2">

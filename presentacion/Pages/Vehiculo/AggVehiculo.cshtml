@@ -7,14 +7,24 @@
     <link rel="stylesheet" href="~/css/Persona.css" />
 </head>
 
-<ol class="breadcrumb">
-    <li class="breadcrumb-item active">Sección Agregar Vehiculo</li>
-</ol>
-<h3>Creación de Vehiculos</h3>
+@if (@Model.vehiculo.VehiculoId > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Personas</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Vehiculo</li>
+        </ol>
+        <h3>Creación de Vehiculos</h3>
+    }
+
 
 <div class="container" id="formList">
     <form method="post" class="needs-validation" novalidate>
-
+        <input type="hidden" asp-for="vehiculo.VehiculoId"/>
         <div class="row col-md-10">
             <div class="col-md-2">
                 <label class="col-form-label">Placa</label>
@@ -51,13 +61,12 @@
                 <label class="col-form-label">Color</label>
             </div>
             <div class="col-md-3 col-lg-3">
-                <select onchange="Mostrar()" id="colorName" class="form-select" asp-for="vehiculo.color" asp-items="Model.nombreColor" required>
-                        <option selected>Seleccione un color...</option>
+                <select  class="form-select" asp-for="vehiculo.ColorId" required>
+                        @foreach (var colores in Model.color)
+                    {
+                            <option value="@colores.ColorId">@colores.Nombre</option>
+                    } 
                 </select>
-                <input type="hidden" id="Ncolor" name="colorNames" class="type">
-                <div class="invalid-feedback">
-                    Por favor seleccion una opcion
-                </div>
             </div>
         </div>
         <br>
@@ -67,13 +76,13 @@
                 <label class="col-form-label">Estilo</label>
             </div>
             <div class="col-md-3">
-               
+                <select class="form-select" asp-for="vehiculo.EstiloId" required>
+
                  @foreach (var estilos in Model.estilo)
                 {
-                   <select  class="form-select" asp-for="vehiculo.EstiloId" required>
-                        <option value="@estilos.Id">@estilos.Nombre</option>
-                   </select> 
+                     <option value="@estilos.EstiloId">@estilos.Nombre</option>
                 } 
+                </select> 
             </div>
                 <div class="invalid-feedback">
                     Por favor seleccion una opcion
@@ -81,30 +90,42 @@
             <div class="col-md-2">
                 <label class="col-form-label">Marca</label>
             </div>
-            <div class="col-md-5 col-lg-5">
+            <div class="col-md-3 col-lg-3">
+                 <select  class="form-select" asp-for="vehiculo.MarcaId" required>
                 @foreach (var marcas in Model.marca)
                 {
-                   <select  class="form-select" asp-for="vehiculo.MarcaId" required>
-                        <option value="@marcas.Id">@marcas.Nombre</option>
-                   </select> 
+                    <option value="@marcas.MarcaId">@marcas.Nombre</option>
                 }      
-                
+                 </select> 
             </div>
         </div>
         <br>
-        <div class="col-md-2">
-                <label class="col-form-label">Tipo Vehiculo</label>
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                    <label class="col-form-label">Tipo Vehiculo</label>
+                </div>
+                <div class="col-md-3">
+                    <select  class="form-select" asp-for="vehiculo.TipoVehiculoId" required>
+                        @foreach (var tipoV in Model.tipoVehiculo)
+                    {
+                            <option value="@tipoV.TipoVehiculoId">@tipoV.Tipo</option>
+                    } 
+                    </select> 
             </div>
-            <div class="col-md-3">
-               
-                     @foreach (var tipoV in Model.tipoVehiculo)
-                {
-                   <select  class="form-select" asp-for="vehiculo.TipoVehiculoId" required>
-                        <option value="@tipoV.Id">@tipoV.Tipo</option>
-                   </select> 
-                } 
-                
+            <div class="col-md-2">
+                    <label class="col-form-label">Propietario</label>
             </div>
+            <div class="col-md-3 col-lg-3">
+            
+                <select  class="form-select" asp-for="vehiculo.PersonaId" required>
+                    @foreach (var personas in Model.persona)
+                    {
+                        <option value="@personas.PersonaId">@personas.Nombre</option>
+                    } 
+                </select>
+            </div>
+        </div>
+        <br>
         <div class="col-md-5 col-lg-5">
             
                 <button type="submit" class="btn btn-outline-primary">Guardar</button>
@@ -113,10 +134,4 @@
     </form>
 </div>
 
-<script type="text/javascript">
-    function Mostrar(){
-        var dato = document.getElementById("colorName");
-        var seleccion = dato.options[dato.selectedIndex].text;
-        document.getElementById("Ncolor").value = seleccion;
-    }
-</script>
+<script src="~/js/Persona.js"></script>

@@ -45,7 +45,7 @@ namespace presentacion.Pages
             {
                 
             } */
-            if (ListPersona.Id>0)
+            if (ListPersona.PersonaId>0)
             {
                 ListPersona = repositorioPersona.Update(ListPersona);
             }

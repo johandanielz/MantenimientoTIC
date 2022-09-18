@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioEstilo.Delete(int Idestilo){
             var estiloExiste = _appContext.estilo.FirstOrDefault(
-                e => e.Id == Idestilo
+                e => e.EstiloId == Idestilo
             );
 
             if (estiloExiste == null)
@@ -39,13 +39,13 @@ namespace persistencia
         //Obtener un solo registro
         Estilo IRepositorioEstilo.Get(int Idestilo){
             return _appContext.estilo.FirstOrDefault(
-                e => e.Id == Idestilo
+                e => e.EstiloId == Idestilo
             );
         }
         //Actualizar
         Estilo IRepositorioEstilo.Update(Estilo estilo){
             var estiloEncontrado = _appContext.estilo.FirstOrDefault(
-                e => e.Id == estilo.Id
+                e => e.EstiloId == estilo.EstiloId
             );
             if (estiloEncontrado != null)
             {

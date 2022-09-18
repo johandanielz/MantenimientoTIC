@@ -43,7 +43,7 @@ namespace presentacion.Pages
             {
                 
             } */
-            if (EditOperacion.Id>0)
+            if (EditOperacion.OperacionId>0)
             {
                 EditOperacion = repositorioOperacion.Update(EditOperacion);
             }

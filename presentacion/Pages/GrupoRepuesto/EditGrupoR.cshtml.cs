@@ -44,7 +44,7 @@ namespace presentacion.Pages
                 
             } */
             Console.WriteLine(ListGrupoR.Estado);
-            if (ListGrupoR.Id>0)
+            if (ListGrupoR.GrupoRepuestoId>0)
             {
                 ListGrupoR = repositorioGrupoRepuesto.Update(ListGrupoR);
             }

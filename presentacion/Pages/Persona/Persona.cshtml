@@ -31,7 +31,7 @@
     @foreach (var personas in Model.persona)
     {
         <tr>
-            <td class="text-center">@personas.Id</td>
+            <td class="text-center">@personas.PersonaId</td>
             <td class="text-center">@personas.Cedula</td>
             <td class="text-center">@personas.Nombre</td>
             <td class="text-center">@personas.Apellido</td>
@@ -40,13 +40,13 @@
             <td class="text-center">@personas.Direccion</td>
             <td class="text-center">@personas.Clasificacion</td>
             <td class="text-center">
-              <a class="btn btn-outline-info table-btn"  asp-page="./Info" asp-route-Idpersona="@personas.Id">
+              <a class="btn btn-outline-info table-btn"  asp-page="./Info" asp-route-Idpersona="@personas.PersonaId">
                <i class="fa-solid fa-circle-info"></i>
               </a>
-              <a class="btn btn-outline-primary table-btn" asp-page="./Edit" asp-route-Idpersona="@personas.Id">
+              <a class="btn btn-outline-primary table-btn" asp-page="./Edit" asp-route-Idpersona="@personas.PersonaId">
                <i class="fa-solid fa-user-pen"></i>
               </a>
-              <a class="btn btn-outline-danger table-btn" asp-page="./Delete" asp-route-Idpersona="@personas.Id">
+              <a class="btn btn-outline-danger table-btn" asp-page="./Delete" asp-route-Idpersona="@personas.PersonaId">
                <i class="fa-solid fa-trash-can"></i>
               </a>
             </td>

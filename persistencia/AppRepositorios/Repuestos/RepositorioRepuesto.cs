@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioRepuesto.Delete(int Idrepuesto){
             var repuestoExiste = _appContext.repuesto.FirstOrDefault(
-                r => r.Id == Idrepuesto
+                r => r.RepuestoId == Idrepuesto
             );
 
             if (repuestoExiste == null)
@@ -39,7 +39,7 @@ namespace persistencia
         //Obtener un solo registro
         Repuesto IRepositorioRepuesto.Get(int Idrepuesto){
             return _appContext.repuesto.FirstOrDefault(
-                r => r.Id == Idrepuesto
+                r => r.RepuestoId == Idrepuesto
             );
         }
         IEnumerable<GrupoRepuesto> IRepositorioRepuesto.GetGrupoRespuestoTrue(){
@@ -48,7 +48,7 @@ namespace persistencia
         //Actualizar
         Repuesto IRepositorioRepuesto.Update(Repuesto repuesto){
             var repuestoEncontrado = _appContext.repuesto.FirstOrDefault(
-                r => r.Id == repuesto.Id
+                r => r.RepuestoId == repuesto.RepuestoId
             );
             if (repuestoEncontrado != null)
             {

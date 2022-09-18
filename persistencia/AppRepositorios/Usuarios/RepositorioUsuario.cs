@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioUsuario.Delete(int Idusuario){
             var usuarioExiste = _appContext.usuario.FirstOrDefault(
-                u => u.Id == Idusuario
+                u => u.UsuarioId == Idusuario
             );
 
             if (usuarioExiste == null)
@@ -39,13 +39,13 @@ namespace persistencia
         //Obtener un solo registro
         Usuario IRepositorioUsuario.Get(int Idusuario){
             return _appContext.usuario.FirstOrDefault(
-                u => u.Id == Idusuario
+                u => u.UsuarioId == Idusuario
             );
         }
         //Actualizar
         Usuario IRepositorioUsuario.Update(Usuario usuario){
             var usuarioEncontrado = _appContext.usuario.FirstOrDefault(
-                t => t.Id == usuario.Id
+                t => t.UsuarioId == usuario.UsuarioId
             );
             if (usuarioEncontrado != null)
             {
@@ -54,7 +54,6 @@ namespace persistencia
                 usuarioEncontrado.Password = usuario.Password;
                 usuarioEncontrado.Password = usuario.Password;
                 usuarioEncontrado.Estado = usuario.Estado;
-                usuarioEncontrado.persona = usuario.persona;
             }
             _appContext.SaveChanges();
             return usuarioEncontrado;

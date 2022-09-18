@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="~/css/GrupoRepuesto.css" />
 </head>
 
-    @if (@Model.ListGrupoR.Id > 0 )
+    @if (@Model.ListGrupoR.GrupoRepuestoId > 0 )
     {
         <ol class="breadcrumb">
             <li class="breadcrumb-item active">Sección Actualizar Grupo de Repuestos</li>
@@ -23,7 +23,7 @@
 
  <div class="container" id="formList">
     <form method="post"  class="needs-validation" novalidate>
-        <input type="hidden" asp-for="ListGrupoR.Id"/>
+        <input type="hidden" asp-for="ListGrupoR.GrupoRepuestoId"/>
 
         <div class="row col-md-10">
             <div class="col-md-2">

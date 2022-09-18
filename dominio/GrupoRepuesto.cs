@@ -8,9 +8,10 @@ namespace dominio
 {
     public class GrupoRepuesto
     {
-        public int Id {get; set;}
+        [Key]
+        public int GrupoRepuestoId {get; set;}
         public string Grupo {get; set;}
         public bool Estado {get; set;}
-        public ICollection<Repuesto> repuesto { get; set; }
+        /* public ICollection<Repuesto> repuesto { get; set; } */
     }
 }

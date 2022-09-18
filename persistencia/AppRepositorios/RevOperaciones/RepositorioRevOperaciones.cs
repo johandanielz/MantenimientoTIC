@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioRevOperaciones.Delete(int IdrevOperaciones){
             var revOperacionesExiste = _appContext.revOperaciones.FirstOrDefault(
-                ro => ro.Id == IdrevOperaciones
+                ro => ro.RevOperacionesId == IdrevOperaciones
             );
 
             if (revOperacionesExiste == null)
@@ -39,18 +39,18 @@ namespace persistencia
         //Obtener un solo registro
         RevOperaciones IRepositorioRevOperaciones.Get(int IdrevOperaciones){
             return _appContext.revOperaciones.FirstOrDefault(
-                ro => ro.Id == IdrevOperaciones
+                ro => ro.RevOperacionesId == IdrevOperaciones
             );
         }
         //Actualizar
         RevOperaciones IRepositorioRevOperaciones.Update(RevOperaciones revOperaciones){
             var revOperacionesEncontradas = _appContext.revOperaciones.FirstOrDefault(
-                r => r.Id == revOperaciones.Id
+                r => r.RevOperacionesId == revOperaciones.RevOperacionesId
             );
             if (revOperacionesEncontradas != null)
             {
-                revOperacionesEncontradas.operacion = revOperaciones.operacion;
-                revOperacionesEncontradas.revision = revOperaciones.revision;
+                /* revOperacionesEncontradas.operacion = revOperaciones.operacion;
+                revOperacionesEncontradas.revision = revOperaciones.revision; */
             }
             _appContext.SaveChanges();
             return revOperacionesEncontradas;

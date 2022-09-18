@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioRevRepuestos.Delete(int IdrevRepuestos){
             var revRepuestosExiste = _appContext.revRepuestos.FirstOrDefault(
-                r => r.Id == IdrevRepuestos
+                r => r.RevRepuestosId == IdrevRepuestos
             );
 
             if (revRepuestosExiste == null)
@@ -39,18 +39,18 @@ namespace persistencia
         //Obtener un solo registro
         RevRepuestos IRepositorioRevRepuestos.Get(int IdrevRepuestos){
             return _appContext.revRepuestos.FirstOrDefault(
-                r => r.Id == IdrevRepuestos
+                r => r.RevRepuestosId == IdrevRepuestos
             );
         }
         //Actualizar
         RevRepuestos IRepositorioRevRepuestos.Update(RevRepuestos revRepuestos){
             var revRepuestosEncontrados = _appContext.revRepuestos.FirstOrDefault(
-                r => r.Id == revRepuestos.Id
+                r => r.RevRepuestosId == revRepuestos.RevRepuestosId
             );
             if (revRepuestosEncontrados != null)
             {
-                revRepuestosEncontrados.repuesto = revRepuestos.repuesto;
-                revRepuestosEncontrados.revision = revRepuestos.revision;
+                /* revRepuestosEncontrados.repuesto = revRepuestos.repuesto;
+                revRepuestosEncontrados.revision = revRepuestos.revision; */
             }
             _appContext.SaveChanges();
             return revRepuestosEncontrados;

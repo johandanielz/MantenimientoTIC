@@ -6,7 +6,8 @@ namespace dominio
 {
     public class Repuesto
     {
-        public int Id {get; set;}
+        [Key]
+        public int RepuestoId {get; set;}
         public string Referencia {get; set;}
         public string Producto {get; set;}
         public string Tipo {get; set;}
@@ -15,9 +16,10 @@ namespace dominio
         public int Cantidad {get; set;}
         public bool Estado {get; set;}
 
-        [ForeignKey("GrupoRepuesto")]
-        public int GrupoRId {get;set;}
-
+        /* [ForeignKey("GrupoRepuesto")]
+        public int GrupoRepuestoId {get;set;}
         public virtual GrupoRepuesto GrupoRepuesto {get;set;}
+
+        public RevRepuestos revRepuestos {get; set;} */
     }
 }

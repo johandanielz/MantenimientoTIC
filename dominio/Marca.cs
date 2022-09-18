@@ -6,7 +6,8 @@ namespace dominio
 {
     public class Marca
     {
-        public int Id { get; set;}
+        [Key]
+        public int MarcaId { get; set;}
         public string Nombre { get; set; }
         public bool Estado { get; set; }
         public Vehiculo vehiculo {get; set;}

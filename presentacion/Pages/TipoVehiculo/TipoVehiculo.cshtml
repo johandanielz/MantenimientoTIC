@@ -29,36 +29,36 @@
         <tr>
             @if (tipoVehiculos.Estado == true)
             {
-                <td class="text-center">@tipoVehiculos.Id</td>
+                <td class="text-center">@tipoVehiculos.TipoVehiculoId</td>
                 <td class="text-center">@tipoVehiculos.Tipo</td>
                 <td class="text-center">@tipoVehiculos.Descripcion</td>
                 <td class="text-center"><span class="badge rounded-pill bg-primary">Activo</span></td>
                 <td class="text-center">
-                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoTipoV" asp-route-IdtipoV="@tipoVehiculos.Id">
+                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoTipoV" asp-route-IdtipoV="@tipoVehiculos.TipoVehiculoId">
                     <i class="fa-solid fa-circle-info"></i>
                   </a>
-                  <a class="btn btn-outline-primary table-btn" asp-page="./EditTipoV" asp-route-IdtipoV="@tipoVehiculos.Id">
+                  <a class="btn btn-outline-primary table-btn" asp-page="./EditTipoV" asp-route-IdtipoV="@tipoVehiculos.TipoVehiculoId">
                     <i class="fa-solid fa-user-pen"></i>
                   </a>
-                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteTipoV" asp-route-IdtipoV="@tipoVehiculos.Id">
+                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteTipoV" asp-route-IdtipoV="@tipoVehiculos.TipoVehiculoId">
                     <i class="fa-solid fa-trash-can"></i>
                   </a>
               </td>
             }
             else
             {
-                <td class="text-center">@tipoVehiculos.Id</td>
+                <td class="text-center">@tipoVehiculos.TipoVehiculoId</td>
                 <td class="text-center">@tipoVehiculos.Tipo</td>
                 <td class="text-center">@tipoVehiculos.Descripcion</td>
                 <td class="text-center"><span class="badge rounded-pill bg-danger">Inactivo</span></td> 
                 <td class="text-center">
-                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoTipoV" asp-route-IdtipoV="@tipoVehiculos.Id">
+                  <a class="btn btn-outline-info table-btn"  asp-page="./InfoTipoV" asp-route-IdtipoV="@tipoVehiculos.TipoVehiculoId">
                     <i class="fa-solid fa-circle-info"></i>
                   </a>
-                  <a class="btn btn-outline-primary table-btn" asp-page="./EditTipoV" asp-route-IdtipoV="@tipoVehiculos.Id">
+                  <a class="btn btn-outline-primary table-btn" asp-page="./EditTipoV" asp-route-IdtipoV="@tipoVehiculos.TipoVehiculoId">
                     <i class="fa-solid fa-user-pen"></i>
                   </a>
-                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteTipoV" asp-route-IdtipoV="@tipoVehiculos.Id">
+                  <a class="btn btn-outline-danger table-btn" asp-page="./DeleteTipoV" asp-route-IdtipoV="@tipoVehiculos.TipoVehiculoId">
                     <i class="fa-solid fa-trash-can"></i>
                   </a>
               </td>

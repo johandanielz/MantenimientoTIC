@@ -44,7 +44,7 @@ namespace presentacion.Pages
             {
                 
             } */
-            if (ListColor.Id>0)
+            if (ListColor.ColorId>0)
             {
                 ListColor = repositorioColor.Update(ListColor);
             }

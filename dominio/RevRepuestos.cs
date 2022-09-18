@@ -1,11 +1,20 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace dominio
 {
     public class RevRepuestos
     {
-        public int Id {get; set;}
-        public Repuesto repuesto {get; set;}
-        public Revision revision {get; set;}
+      [Key]
+      public int RevRepuestosId {get; set;}
+
+      /*   [ForeignKey("Repuesto")]
+        public int RepuestoId {get;set;}
+        public virtual Repuesto repuesto {get;set;}
+
+        [ForeignKey("Revision")]
+        public int RevisionId {get;set;}
+        public virtual Revision revision {get;set;} */
     }
 }

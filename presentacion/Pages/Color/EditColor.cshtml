@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="~/css/Color.css" />
 </head>
 
-    @if (@Model.ListColor.Id > 0 )
+    @if (@Model.ListColor.ColorId > 0 )
     {
         <ol class="breadcrumb">
             <li class="breadcrumb-item active">Sección Actualizar Colores</li>
@@ -23,7 +23,7 @@
 
  <div class="container" id="formList">
     <form method="post"  class="needs-validation" novalidate>
-        <input type="hidden" asp-for="ListColor.Id"/>
+        <input type="hidden" asp-for="ListColor.ColorId"/>
 
         <div class="row col-md-10">
             <div class="col-md-2">

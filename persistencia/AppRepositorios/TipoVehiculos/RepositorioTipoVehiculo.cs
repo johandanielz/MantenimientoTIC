@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioTipoVehiculo.Delete(int IdtipoVehiculo){
             var tipoVehiculoExiste = _appContext.tipoVehiculo.FirstOrDefault(
-                tv => tv.Id == IdtipoVehiculo
+                tv => tv.TipoVehiculoId == IdtipoVehiculo
             );
 
             if (tipoVehiculoExiste == null)
@@ -39,13 +39,13 @@ namespace persistencia
         //Obtener un solo registro
         TipoVehiculo IRepositorioTipoVehiculo.Get(int IdtipoVehiculo){
             return _appContext.tipoVehiculo.FirstOrDefault(
-                tv => tv.Id == IdtipoVehiculo
+                tv => tv.TipoVehiculoId == IdtipoVehiculo
             );
         }
         //Actualizar
         TipoVehiculo IRepositorioTipoVehiculo.Update(TipoVehiculo tipoVehiculo){
             var tipoVehiculoEncontrado = _appContext.tipoVehiculo.FirstOrDefault(
-                tv => tv.Id == tipoVehiculo.Id
+                tv => tv.TipoVehiculoId == tipoVehiculo.TipoVehiculoId
             );
             if (tipoVehiculoEncontrado != null)
             {

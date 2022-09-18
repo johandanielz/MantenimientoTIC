@@ -1,0 +1,64 @@
+﻿@page
+@model presentacion.Pages.InfoVehiculoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Vehiculo</li>
+</ol>
+<div>
+  <h5>Datos del Vehiculo <strong>@Model.InfoVehiculo.Placa</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Placa</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.Placa)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Modelo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.Modelo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Servicio</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.Servicio)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Color</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.color.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estilo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.estilo.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Marca</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.marca.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tipo Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.tipoVehiculo.Tipo)
+        </div>
+       <div class="col-md-2">
+            <label><strong>Propietario</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoVehiculo.persona.Nombre)
+        </div>
+    </div>
+</div>

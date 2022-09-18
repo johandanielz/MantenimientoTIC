@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioPersona.Delete(int Idpersona){
             var personaExiste = _appContext.persona.FirstOrDefault(
-                p => p.Id == Idpersona
+                p => p.PersonaId == Idpersona
             );
 
             if (personaExiste == null)
@@ -39,7 +39,7 @@ namespace persistencia
         //Obtener un solo registro
         Persona IRepositorioPersona.Get(int Idpersona){
             return _appContext.persona.FirstOrDefault(
-                p => p.Id == Idpersona
+                p => p.PersonaId == Idpersona
             );
         }
         //Obtener un solo registro por cedula
@@ -51,7 +51,7 @@ namespace persistencia
         //Actualizar
         Persona IRepositorioPersona.Update(Persona persona){
             var personaEncontrada = _appContext.persona.FirstOrDefault(
-                p => p.Id == persona.Id
+                p => p.PersonaId == persona.PersonaId
             );
             if (personaEncontrada != null)
             {

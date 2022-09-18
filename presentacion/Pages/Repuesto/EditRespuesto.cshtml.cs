@@ -47,7 +47,7 @@ namespace presentacion.Pages
             {
                 
             } */
-            if (EditRepuesto.Id>0)
+            if (EditRepuesto.RepuestoId>0)
             {
                 EditRepuesto = repositorioRepuesto.Update(EditRepuesto);
             }

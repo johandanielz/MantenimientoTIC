@@ -22,11 +22,9 @@ namespace presentacion.Pages
         [BindProperty]
 
         public Vehiculo vehiculo {get;set;}
-        public Persona persona {get;set;}
-        public Color color {get;set;}
-        /* public IEnumerable<Color> color {get;set;} */
-        public List<SelectListItem> nombreColor {get;set;} 
+        public IEnumerable<Color> color {get;set;}
         public IEnumerable<Estilo> estilo {get;set;}
+        public IEnumerable<Persona> persona {get;set;}
         public IEnumerable<Marca> marca {get;set;}
         public IEnumerable<TipoVehiculo> tipoVehiculo {get;set;}
     
@@ -39,39 +37,43 @@ namespace presentacion.Pages
             this.repositorioMarca = repositorioMarca;
             this.repositorioTipoVehiculo = repositorioTipoVehiculo;
         }
-        public void OnGet()
+        
+        public IActionResult OnGet(int? Idvehiculo)
         {
-            persona = new Persona();
-            /* color = repositorioVehiculo.GetColorTrue(); */
-            nombreColor = repositorioColor.GetNombreColor();
+            persona = repositorioPersona.GetAll();
+            color = repositorioColor.GetAll();
             estilo = repositorioEstilo.GetAll();
             marca = repositorioMarca.GetAll();
             tipoVehiculo = repositorioTipoVehiculo.GetAll();
-        }
-        public IActionResult OnPost(int Idpersona)
-        {
-            persona = repositorioPersona.Get(Idpersona);
-            if (persona!=null)
-            {
-                string dato = Request.Form["colorNames"];
-                Console.WriteLine(dato);
-                var res = dato.Split();
 
-                color = repositorioColor.GetColorName(res[0]);
-                vehiculo.color = color;
-                if (persona.vehiculo==null)
-                {
-                    persona.vehiculo = new List<Vehiculo>();
-                    persona.vehiculo.Add(vehiculo);
-                }
-                else
-                {
-                    repositorioVehiculo.Add(vehiculo);
-                }
-                repositorioPersona.Update(persona);
-                return Page();
+            if (Idvehiculo.HasValue)
+            {
+                vehiculo = repositorioVehiculo.Get(Idvehiculo.Value);
+            }else
+            {
+                vehiculo = new Vehiculo();
             }
-            return RedirectToPage("Persona");
+            
+            if (vehiculo == null)
+            {
+                return RedirectToPage("./Hola");
+            }
+            else
+                return Page();
+        }
+        public IActionResult OnPost()
+        {
+            if (vehiculo.VehiculoId>0)
+            {
+                vehiculo = repositorioVehiculo.Update(vehiculo);
+            }
+            else
+            {
+                repositorioVehiculo.Add(vehiculo);
+            }
+            
+            
+            return RedirectToPage("Vehiculo");
         }
     }
 }

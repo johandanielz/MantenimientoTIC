@@ -25,7 +25,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioGrupoRepuesto.Delete(int IdgrupoRepuesto){
             var grupoRepuestoExiste = _appContext.grupoRepuesto.FirstOrDefault(
-                gr => gr.Id == IdgrupoRepuesto
+                gr => gr.GrupoRepuestoId == IdgrupoRepuesto
             );
 
             if (grupoRepuestoExiste == null)
@@ -35,19 +35,19 @@ namespace persistencia
             
         }
         //Obtener todos los registros
-        IEnumerable<GrupoRepuesto> IRepositorioGrupoRepuesto.GetAll(){
+        /* IEnumerable<GrupoRepuesto> IRepositorioGrupoRepuesto.GetAll(){
             return _appContext.grupoRepuesto.Include(r => r.repuesto);
-        }
+        } */
         //Obtener un solo registro
         GrupoRepuesto IRepositorioGrupoRepuesto.Get(int IdgrupoRepuesto){
             return _appContext.grupoRepuesto.FirstOrDefault(
-                gr => gr.Id == IdgrupoRepuesto
+                gr => gr.GrupoRepuestoId == IdgrupoRepuesto
             );
         }
         //Actualizar
         GrupoRepuesto IRepositorioGrupoRepuesto.Update(GrupoRepuesto grupoRepuesto){
             var grupoRepuestoEncontrado = _appContext.grupoRepuesto.FirstOrDefault(
-                gr => gr.Id == grupoRepuesto.Id
+                gr => gr.GrupoRepuestoId == grupoRepuesto.GrupoRepuestoId
             );
             if (grupoRepuestoEncontrado != null)
             {

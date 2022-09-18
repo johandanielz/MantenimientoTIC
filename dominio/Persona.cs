@@ -1,12 +1,14 @@
 ﻿using System;
-/* using System.ComponentModel.DataAnnotations; */
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace dominio
 {
     public class Persona
     {
-        public int Id {get; set;}
+        [Key]
+        public int PersonaId {get; set;}
         /* [Required, StringLength(50)] */
         public string TipoDocumento {get; set;}
         /* [Required, StringLength(10)] */
@@ -24,7 +26,8 @@ namespace dominio
         /* [Required, StringLength(15)] */
         public string Clasificacion {get; set;}
 
-        public System.Collections.Generic.List<Vehiculo> vehiculo {get; set;}
+        public Tecnico tecnico {get; set;}
+        public ICollection<Vehiculo> vehiculo { get; set; }
         /* public string ingresar(){
             return "Ingresé al sistema";
         } */

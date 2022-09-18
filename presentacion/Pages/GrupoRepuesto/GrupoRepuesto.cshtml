@@ -28,34 +28,34 @@
         <tr>
           @if (grupoRepuestos.Estado == true)
           {
-            <td class="text-center">@grupoRepuestos.Id</td>
+            <td class="text-center">@grupoRepuestos.GrupoRepuestoId</td>
             <td class="text-center">@grupoRepuestos.Grupo</td>
             <td class="text-center"><span class="badge rounded-pill bg-primary">Activo</span></td>
             <td class="text-center">
-              <a class="btn btn-outline-info table-btn"  asp-page="./InfoGrupoR" asp-route-IdgrupoR="@grupoRepuestos.Id">
+              <a class="btn btn-outline-info table-btn"  asp-page="./InfoGrupoR" asp-route-IdgrupoR="@grupoRepuestos.GrupoRepuestoId">
                <i class="fa-solid fa-circle-info"></i>
               </a>
-              <a class="btn btn-outline-primary table-btn" asp-page="./EditGrupoR" asp-route-IdgrupoR="@grupoRepuestos.Id">
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditGrupoR" asp-route-IdgrupoR="@grupoRepuestos.GrupoRepuestoId">
                <i class="fa-solid fa-user-pen"></i>
               </a>
-              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteGrupoR" asp-route-IdgrupoR="@grupoRepuestos.Id">
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteGrupoR" asp-route-IdgrupoR="@grupoRepuestos.GrupoRepuestoId">
                <i class="fa-solid fa-trash-can"></i>
               </a>
             </td>
           }
           else
           {
-            <td class="text-center">@grupoRepuestos.Id</td>
+            <td class="text-center">@grupoRepuestos.GrupoRepuestoId</td>
             <td class="text-center">@grupoRepuestos.Grupo</td>
             <td class="text-center"><span class="badge rounded-pill bg-danger">Inactivo</span></td> 
             <td class="text-center">
-              <a class="btn btn-outline-info table-btn"  asp-page="./InfoGrupoR" asp-route-IdgrupoR="@grupoRepuestos.Id">
+              <a class="btn btn-outline-info table-btn"  asp-page="./InfoGrupoR" asp-route-IdgrupoR="@grupoRepuestos.GrupoRepuestoId">
                <i class="fa-solid fa-circle-info"></i>
               </a>
-              <a class="btn btn-outline-primary table-btn" asp-page="./EditGrupoR" asp-route-IdgrupoR="@grupoRepuestos.Id">
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditGrupoR" asp-route-IdgrupoR="@grupoRepuestos.GrupoRepuestoId">
                <i class="fa-solid fa-user-pen"></i>
               </a>
-              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteGrupoR" asp-route-IdgrupoR="@grupoRepuestos.Id">
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteGrupoR" asp-route-IdgrupoR="@grupoRepuestos.GrupoRepuestoId">
                <i class="fa-solid fa-trash-can"></i>
               </a>
             </td>

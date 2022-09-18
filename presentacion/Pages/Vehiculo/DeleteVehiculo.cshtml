@@ -1,0 +1,77 @@
+﻿@page
+@model presentacion.Pages.DeleteVehiculoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Vehiculos</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar el Vehiculo <strong>@Model.DelVehiculo.Placa?</strong></h4>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Placa</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.Placa)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Modelo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.Modelo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Servicio</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.Servicio)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Color</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.color.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estilo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.estilo.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Marca</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.marca.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tipo Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.tipoVehiculo.Tipo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Propietario</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelVehiculo.persona.Nombre)
+        </div>
+       
+    </div>
+</div>
+
+<form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelVehiculo.VehiculoId">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteVehiculo/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Vehiculo" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

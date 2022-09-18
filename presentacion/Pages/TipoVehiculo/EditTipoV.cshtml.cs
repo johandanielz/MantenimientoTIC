@@ -43,7 +43,7 @@ namespace presentacion.Pages
             {
                 
             } */
-            if (EditTipoV.Id>0)
+            if (EditTipoV.TipoVehiculoId>0)
             {
                 EditTipoV = repositorioTipoVehiculo.Update(EditTipoV);
             }

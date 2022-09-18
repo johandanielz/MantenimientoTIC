@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioOperacion.Delete(int Idoperacion){
             var operacionExiste = _appContext.operacion.FirstOrDefault(
-                o => o.Id == Idoperacion
+                o => o.OperacionId == Idoperacion
             );
 
             if (operacionExiste == null)
@@ -39,13 +39,13 @@ namespace persistencia
         //Obtener un solo registro
         Operacion IRepositorioOperacion.Get(int Idoperacion){
             return _appContext.operacion.FirstOrDefault(
-                o => o.Id == Idoperacion
+                o => o.OperacionId == Idoperacion
             );
         }
         //Actualizar
         Operacion IRepositorioOperacion.Update(Operacion operacion){
             var operacionEncontrada = _appContext.operacion.FirstOrDefault(
-                o => o.Id == operacion.Id
+                o => o.OperacionId == operacion.OperacionId
             );
             if (operacionEncontrada != null)
             {

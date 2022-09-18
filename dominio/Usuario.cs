@@ -1,14 +1,18 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace dominio
 {
     public class Usuario
     {
-        public int Id {get; set;}
+        [Key]
+        public int UsuarioId {get; set;}
         public string Rol {get; set;}
         public string User {get; set;}
         public string Password {get; set;}
         public bool Estado {get; set;}
-        public Persona persona {get; set;}
+        
     }
 }

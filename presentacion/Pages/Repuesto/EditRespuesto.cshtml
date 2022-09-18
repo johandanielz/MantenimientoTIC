@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="~/css/TipoVehiculo.css" />
 </head>
 
-    @if (@Model.EditRepuesto.Id > 0 )
+    @if (@Model.EditRepuesto.RepuestoId > 0 )
     {
         <ol class="breadcrumb">
             <li class="breadcrumb-item active">Sección Actualizar Repuestos</li>
@@ -23,7 +23,7 @@
 
  <div class="container" id="formList">
     <form method="post"  class="needs-validation" novalidate>
-        <input type="hidden" asp-for="EditRepuesto.Id"/>
+        <input type="hidden" asp-for="EditRepuesto.RepuestoId"/>
 
         <div class="row col-md-10">
             <div class="col-md-2">
@@ -103,7 +103,7 @@
                 <select  class="form-select" required>
                     @foreach (var grupo in Model.GRrepuesto)
                     {
-                        <option value="@grupo.Id">@grupo.Grupo</option>
+                        <option value="@grupo.GrupoRepuestoId">@grupo.Grupo</option>
                     }
                 </select>
                 <div class="invalid-feedback">

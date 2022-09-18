@@ -23,7 +23,7 @@ namespace persistencia
         //Eliminar
         void IRepositorioMarca.Delete(int Idmarca){
             var marcaExiste = _appContext.marca.FirstOrDefault(
-                m => m.Id == Idmarca
+                m => m.MarcaId == Idmarca
             );
 
             if (marcaExiste == null)
@@ -39,13 +39,13 @@ namespace persistencia
         //Obtener un solo registro
         Marca IRepositorioMarca.Get(int Idmarca){
             return _appContext.marca.FirstOrDefault(
-                m => m.Id == Idmarca
+                m => m.MarcaId == Idmarca
             );
         }
         //Actualizar
         Marca IRepositorioMarca.Update(Marca marca){
             var marcaEncontrada = _appContext.marca.FirstOrDefault(
-                m => m.Id == marca.Id
+                m => m.MarcaId == marca.MarcaId
             );
             if (marcaEncontrada != null)
             {
