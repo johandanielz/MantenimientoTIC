@@ -16,15 +16,16 @@ namespace dominio
         public string Estado {get; set;}
         public string Sintomas {get; set;}
 
-        /* [ForeignKey("Vehiculo")]
+        [ForeignKey("Vehiculo")]
         public int VehiculoId {get;set;}
-        public virtual Vehiculo vehiculo {get;set;} */
+        public virtual Vehiculo vehiculo {get;set;}
 
-       /*  [ForeignKey("Tecnico")]
+        [ForeignKey("Tecnico")]
         public int TecnicoId {get;set;}
         public virtual Tecnico tecnico {get;set;}
 
-        public RevOperaciones revOperaciones {get; set;}
-        public RevRepuestos revRepuestos {get; set;} */
+        public RevOperaciones revOperaciones {get;set;}
+        public RevRepuestos revRepuestos {get;set;}
+
     }
 }

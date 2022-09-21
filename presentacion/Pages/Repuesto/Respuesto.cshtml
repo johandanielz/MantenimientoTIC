@@ -10,7 +10,7 @@
 <h3 class="text-center p-2 mb-2 breadcrumb-item active" id="tituloPersona"><strong>Repuestos</strong></h3>
 
 <a asp-page="EditRespuesto" class="btn btn-outline-primary" id="btnAdd">
-  Agregar Respuesto
+  Agregar Repuesto
 </a>
 <br>
 <br>
@@ -33,26 +33,52 @@
     @foreach (var repuestos in Model.repuesto)
     {
       <tr>
-        <td class="text-center">@repuestos.RepuestoId</td>
-        <td class="text-center">@repuestos.Referencia</td>
-        <td class="text-center">@repuestos.Producto</td>
-        <td class="text-center">@repuestos.Tipo</td>
-        <td class="text-center">@repuestos.Costo</td>
-        <td class="text-center">@repuestos.Precio</td>
-        <td class="text-center">@repuestos.Cantidad</td>
-        <td class="text-center">@repuestos.Estado</td>
-        <td class="text-center">@repuestos.Estado</td>
-        <td class="text-center">
-          <a class="btn btn-outline-info table-btn" asp-page="" asp-route-Idrepuesto="@repuestos.RepuestoId">
-            <i class="fa-solid fa-circle-info"></i>
-          </a>
-          <a class="btn btn-outline-primary table-btn" asp-page="./EditRespuesto" asp-route-Idrepuesto="@repuestos.RepuestoId">
-            <i class="fa-solid fa-user-pen"></i>
-          </a>
-          <a class="btn btn-outline-danger table-btn" asp-page="" asp-route-Idrepuesto="@repuestos.RepuestoId">
-            <i class="fa-solid fa-trash-can"></i>
-          </a>
-        </td>
+        @if (repuestos.Estado == true)
+        {
+            <td class="text-center">@repuestos.RepuestoId</td>
+            <td class="text-center">@repuestos.Referencia</td>
+            <td class="text-center">@repuestos.Producto</td>
+            <td class="text-center">@repuestos.Tipo</td>
+            <td class="text-center">@repuestos.Costo</td>
+            <td class="text-center">@repuestos.Precio</td>
+            <td class="text-center">@repuestos.Cantidad</td>
+            <td class="text-center"><span class="badge rounded-pill bg-primary">Activo</span></td>
+            <td class="text-center">@repuestos.grupoRepuesto.Grupo</td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn" asp-page="./InfoRepuesto" asp-route-Idrepuesto="@repuestos.RepuestoId">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditRespuesto" asp-route-Idrepuesto="@repuestos.RepuestoId">
+                <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteRepuesto" asp-route-Idrepuesto="@repuestos.RepuestoId">
+                <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+          }
+      else
+          {
+            <td class="text-center">@repuestos.RepuestoId</td>
+            <td class="text-center">@repuestos.Referencia</td>
+            <td class="text-center">@repuestos.Producto</td>
+            <td class="text-center">@repuestos.Tipo</td>
+            <td class="text-center">@repuestos.Costo</td>
+            <td class="text-center">@repuestos.Precio</td>
+            <td class="text-center">@repuestos.Cantidad</td>
+            <td class="text-center"><span class="badge rounded-pill bg-danger">Inactivo</span></td> 
+            <td class="text-center">@repuestos.grupoRepuesto.Grupo</td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn" asp-page="./InfoRepuesto" asp-route-Idrepuesto="@repuestos.RepuestoId">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditRespuesto" asp-route-Idrepuesto="@repuestos.RepuestoId">
+                <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteRepuesto" asp-route-Idrepuesto="@repuestos.RepuestoId">
+                <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+          }
       </tr>
     }
   </tbody>

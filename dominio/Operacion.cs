@@ -13,6 +13,7 @@ namespace dominio
         public string Descripcion {get; set;}
         public int Horas {get; set;}
         public bool Estado {get; set;}
-        /* public RevOperaciones revOperaciones {get; set;} */
+
+        public RevOperaciones revOperaciones {get;set;} 
     }
 }

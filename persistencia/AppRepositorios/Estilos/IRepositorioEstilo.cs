@@ -13,5 +13,6 @@ namespace persistencia
         void Delete(int Idestilo);
         Estilo Get(int Idestilo);
         IEnumerable<Estilo> GetAll();
+        IEnumerable<Estilo> GetEstadoTrue();
     }
 }

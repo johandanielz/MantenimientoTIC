@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using dominio;
 
 namespace persistencia
@@ -22,7 +23,7 @@ namespace persistencia
         }
         //Eliminar
         void IRepositorioRevision.Delete(int Idrevision){
-            var revisionExiste = _appContext.revision.FirstOrDefault(
+            var revisionExiste = _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico).FirstOrDefault(
                 r => r.RevisionId == Idrevision
             );
 
@@ -34,11 +35,11 @@ namespace persistencia
         }
         //Obtener todos los registros
         IEnumerable<Revision> IRepositorioRevision.GetAll(){
-            return _appContext.revision;
+            return _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico);
         }
         //Obtener un solo registro
         Revision IRepositorioRevision.Get(int Idrevision){
-            return _appContext.revision.FirstOrDefault(
+            return _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico).FirstOrDefault(
                 r => r.RevisionId == Idrevision
             );
         }
@@ -56,8 +57,8 @@ namespace persistencia
                 revisionEncontrada.Fecha_fin = revision.Fecha_fin;
                 revisionEncontrada.Estado = revision.Estado;
                 revisionEncontrada.Sintomas = revision.Sintomas;
-               
-                /* revisionEncontrada.tecnico = revision.tecnico; */
+                revisionEncontrada.VehiculoId = revision.VehiculoId;
+                revisionEncontrada.TecnicoId = revision.TecnicoId;
             }
             _appContext.SaveChanges();
             return revisionEncontrada;

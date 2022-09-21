@@ -36,6 +36,9 @@ namespace persistencia
         IEnumerable<Marca> IRepositorioMarca.GetAll(){
             return _appContext.marca;
         }
+        IEnumerable<Marca> IRepositorioMarca.GetEstadoTrue(){
+            return _appContext.marca.Where(m =>m.Estado == true).ToList();
+        }
         //Obtener un solo registro
         Marca IRepositorioMarca.Get(int Idmarca){
             return _appContext.marca.FirstOrDefault(

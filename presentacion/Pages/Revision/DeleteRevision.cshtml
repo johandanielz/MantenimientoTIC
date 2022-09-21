@@ -1,0 +1,81 @@
+﻿@page
+@model presentacion.Pages.DeleteRevisionModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Revision</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar la revision del Vehiculo <strong>@Model.DelRevision.vehiculo.Placa?</strong></h4>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.vehiculo.Placa)
+        </div>
+         <div class="col-md-2">
+            <label><strong>Tecnico</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.tecnico.PersonaId)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Kilometraje</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.Kilometraje)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado del Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.Estado_vehiculo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Fecha</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.Fecha)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Fecha Inicial</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.Fecha_inicio)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Fecha Final</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.Fecha_fin)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Sintomas</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.Sintomas)
+        </div>
+       <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevision.Estado)
+        </div>
+    </div>
+</div>
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelRevision.RevisionId">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteRevision/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Revision" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

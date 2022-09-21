@@ -1,0 +1,39 @@
+﻿@page
+@model presentacion.Pages.DeleteRevOpeModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Rev-Operacion</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar este registro?</h4>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Operacion</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevOpe.operacion.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Revision</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRevOpe.revision.vehiculo.Placa)
+        </div>
+     </div>   
+</div>
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelRevOpe.RevOperacionesId">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteRevOpe/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./RevOpe" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

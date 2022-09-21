@@ -13,5 +13,6 @@ namespace persistencia
         void Delete(int Idmarca);
         Marca Get(int Idmarca);
         IEnumerable<Marca> GetAll();
+        IEnumerable<Marca> GetEstadoTrue();
     }
 }

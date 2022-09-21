@@ -1,0 +1,65 @@
+﻿@page
+@model presentacion.Pages.MarcaModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+
+  <h3 class="text-center p-2 mb-2 breadcrumb-item active" id="tituloColor"><strong>Marcas</strong></h3>
+
+  <a asp-page="EditMarca" class="btn btn-outline-primary" id="btnAdd">
+    Agregar Marcas
+  </a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"class="text-center">N°</th>
+      <th scope="col" class="text-center">Nombre</th>
+      <th scope="col" class="text-center">Estado</th>
+      <th colspan="3" class="text-center">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var marcas in Model.marca)
+    {
+        <tr>
+          @if (marcas.Estado == true)
+          { 
+            <td class="text-center">@marcas.MarcaId</td>
+            <td class="text-center">@marcas.Nombre</td>
+            <td class="text-center"><span class="badge rounded-pill bg-primary">Activo</span></td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn"  asp-page="./InfoMarca" asp-route-Idmarca="@marcas.MarcaId">
+               <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditMarca" asp-route-Idmarca="@marcas.MarcaId">
+               <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteMarca" asp-route-Idmarca="@marcas.MarcaId">
+               <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+          }else{
+            <td class="text-center">@marcas.MarcaId</td>
+            <td class="text-center">@marcas.Nombre</td>
+            <td class="text-center"><span class="badge rounded-pill bg-danger">Inactivo</span></td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn"  asp-page="./InfoMarca" asp-route-Idmarca="@marcas.MarcaId">
+               <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditMarca" asp-route-Idmarca="@marcas.MarcaId">
+               <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteMarca" asp-route-Idmarca="@marcas.MarcaId">
+               <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+          }
+           
+        </tr>
+    }
+ </tbody>
+</table>

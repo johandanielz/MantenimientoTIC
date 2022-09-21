@@ -1,0 +1,72 @@
+﻿@page
+@model presentacion.Pages.EditTecnicoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+
+    @if (@Model.EditTecnico.TecnicoId > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Tecnicos</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Tecnicos</li>
+        </ol>
+        <h3>Creación de Tecnico</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="EditTecnico.TecnicoId"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Tecnico</label>
+            </div>
+            <div class="col-md-3">
+                <select  class="form-select" asp-for="EditTecnico.PersonaId" required>
+                    @foreach (var personas in Model.persona)
+                    {
+                        <option value="@personas.PersonaId">@personas.Nombre</option>
+                    }
+                </select>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Tipo Vehiculo</label>
+            </div>
+            <div class="col-md-3">
+                <select  class="form-select" asp-for="EditTecnico.TipoVehiculoId" required>
+                    @foreach (var tipoV in Model.tipoVehiculo)
+                    {
+                        <option value="@tipoV.TipoVehiculoId">@tipoV.Tipo</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Estado</label>
+            </div>
+            <div class="col-md-3">
+                <div class="button r" id="button-6">
+                    <input type="checkbox" class="checkbox" asp-for="EditTecnico.Estado"/>
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+          </div>  
+    </form>
+</div> 
+
+<script src="~/js/Persona.js"></script>

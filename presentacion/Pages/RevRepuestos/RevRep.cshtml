@@ -1,0 +1,46 @@
+﻿@page
+@model presentacion.Pages.RevRepModel
+@{
+}
+<head>
+  <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+
+<h3 class="text-center p-2 mb-2 breadcrumb-item active" id="tituloPersona"><strong>Rev-Repuestos</strong></h3>
+
+<a asp-page="EditRevRep" class="btn btn-outline-primary" id="btnAdd">
+  Agregar Rev-Repuesto
+</a>
+<br>
+<br>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">N°</th>
+      <th scope="col" class="text-center">Revision</th>
+      <th scope="col" class="text-center">Repuesto</th>
+      <th colspan="3" class="text-center">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var RevOReps in Model.revRepuestos)
+    {
+      <tr>
+            <td class="text-center">@RevOReps.RevRepuestosId</td>
+            <td class="text-center">@RevOReps.revision.vehiculo.Placa</td>
+            <td class="text-center">@RevOReps.repuesto.Producto</td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn" asp-page="./InfoRevRep" asp-route-IdrevRep="@RevOReps.RevRepuestosId">
+                <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditRevRep" asp-route-IdrevRep="@RevOReps.RevRepuestosId">
+                <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteRevRep" asp-route-IdrevRep="@RevOReps.RevRepuestosId">
+                <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+      </tr>
+    }
+  </tbody>
+</table>

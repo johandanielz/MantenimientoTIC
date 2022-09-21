@@ -1,0 +1,43 @@
+﻿@page
+@model presentacion.Pages.InfoTecnicoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Tecnico</li>
+</ol>
+<div>
+  <h5>Datos del Tecnico <strong>@Model.InfoTecnico.persona.Nombre</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Tecnico</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoTecnico.persona.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tipo Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoTecnico.tipoVehiculo.Tipo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.InfoTecnico.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>

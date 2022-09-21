@@ -5805,11 +5805,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\presentacion\\presentacion.csproj",
+      "projectUniqueName": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\presentacion\\presentacion.csproj",
       "projectName": "presentacion",
-      "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\presentacion\\presentacion.csproj",
+      "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\presentacion\\presentacion.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\presentacion\\obj\\",
+      "outputPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\presentacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -5823,11 +5823,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\dominio\\dominio.csproj": {
-              "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\dominio\\dominio.csproj"
+            "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj": {
+              "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj"
             },
-            "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\persistencia\\persistencia.csproj": {
-              "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\persistencia\\persistencia.csproj"
+            "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj": {
+              "projectPath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj"
             }
           }
         }

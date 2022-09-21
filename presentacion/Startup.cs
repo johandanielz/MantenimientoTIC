@@ -40,6 +40,12 @@ namespace presentacion
             services.AddScoped<IRepositorioEstilo, RepositorioEstilo>();
             services.AddScoped<IRepositorioMarca, RepositorioMarca>();
             services.AddScoped<IRepositorioTipoVehiculo, RepositorioTipoVehiculo>();
+            services.AddScoped<IRepositorioTecnico, RepositorioTecnico>();
+            services.AddScoped<IRepositorioRevision, RepositorioRevision>();
+            services.AddScoped<IRepositorioRevOperaciones, RepositorioRevOperaciones>();
+            services.AddScoped<IRepositorioRevRepuestos, RepositorioRevRepuestos>();
+            services.AddScoped<IRepositorioEstilo, RepositorioEstilo>();
+            services.AddScoped<IRepositorioMarca, RepositorioMarca>();
 
 
             //Configuracion para la conexion a la bd

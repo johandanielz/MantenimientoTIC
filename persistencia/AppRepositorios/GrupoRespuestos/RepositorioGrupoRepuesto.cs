@@ -1,3 +1,4 @@
+using System.Globalization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,12 @@ namespace persistencia
             
         }
         //Obtener todos los registros
-        /* IEnumerable<GrupoRepuesto> IRepositorioGrupoRepuesto.GetAll(){
-            return _appContext.grupoRepuesto.Include(r => r.repuesto);
-        } */
+        IEnumerable<GrupoRepuesto> IRepositorioGrupoRepuesto.GetAll(){
+            return _appContext.grupoRepuesto;
+        }
+        IEnumerable<GrupoRepuesto> IRepositorioGrupoRepuesto.GetEstadoTrue(){
+            return _appContext.grupoRepuesto.Where(gr =>gr.Estado == true).ToList();
+        }
         //Obtener un solo registro
         GrupoRepuesto IRepositorioGrupoRepuesto.Get(int IdgrupoRepuesto){
             return _appContext.grupoRepuesto.FirstOrDefault(

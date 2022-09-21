@@ -1,0 +1,49 @@
+﻿@page
+@model presentacion.Pages.DeleteMarcaModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Marcas</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar la marca <strong>@Model.DelMarca.Nombre?</strong></h4>
+    <br>
+    <div class="row" id="delete">
+        <div class="col-md-2">
+            <label><strong>Marca</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelMarca.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.DelMarca.Estado == true)
+        {
+            <div class="col-md-10">
+                <label>Activo</label>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-10">
+                <label>Inactivo</label>
+            </div>
+        }
+    </div>
+</div>
+
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelMarca.MarcaId">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteMarca/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Marca" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

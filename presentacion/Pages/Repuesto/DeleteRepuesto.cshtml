@@ -1,0 +1,84 @@
+﻿@page
+@model presentacion.Pages.DeleteRepuestoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Repuesto</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar el repuesto <strong>@Model.DelRepuesto.Producto?</strong></h4>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Nombre del Producto</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRepuesto.Producto)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Referencia</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRepuesto.Referencia)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tipo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRepuesto.Tipo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Coto</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRepuesto.Costo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Precio</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRepuesto.Precio)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Cantidad</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRepuesto.Cantidad)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.DelRepuesto.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+       <div class="col-md-2">
+            <label><strong>Grupo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelRepuesto.grupoRepuesto.Grupo)
+        </div>
+    </div>
+</div>
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelRepuesto.RepuestoId">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteRepuesto/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Respuesto" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

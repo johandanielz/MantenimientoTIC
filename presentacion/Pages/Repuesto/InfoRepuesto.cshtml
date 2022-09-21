@@ -1,0 +1,73 @@
+﻿@page
+@model presentacion.Pages.InfoRepuestoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Repuesto</li>
+</ol>
+<div>
+  <h5>Datos del Repuesto <strong>@Model.InfoRepuesto.Producto</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Nombre del Producto</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRepuesto.Producto)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Referencia</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRepuesto.Referencia)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tipo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRepuesto.Tipo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Coto</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRepuesto.Costo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Precio</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRepuesto.Precio)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Cantidad</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRepuesto.Cantidad)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.InfoRepuesto.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+       <div class="col-md-2">
+            <label><strong>Grupo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRepuesto.grupoRepuesto.Grupo)
+        </div>
+    </div>
+</div>

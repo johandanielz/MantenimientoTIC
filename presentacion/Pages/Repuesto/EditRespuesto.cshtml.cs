@@ -12,19 +12,21 @@ namespace presentacion.Pages
     public class EditRespuestoModel : PageModel
     {
         private readonly IRepositorioRepuesto repositorioRepuesto;
+        private readonly IRepositorioGrupoRepuesto repositorioGrupoRepuesto;
         [BindProperty] //Se encarga de hacer un enlace del modelo y la pagina razor
 
         public Repuesto EditRepuesto {get;set;}
         public IEnumerable<GrupoRepuesto> GRrepuesto {get;set;}
 
-        public EditRespuestoModel(IRepositorioRepuesto repositorioRepuesto)
+        public EditRespuestoModel(IRepositorioRepuesto repositorioRepuesto,IRepositorioGrupoRepuesto repositorioGrupoRepuesto)
         {
             this.repositorioRepuesto = repositorioRepuesto;
+            this.repositorioGrupoRepuesto = repositorioGrupoRepuesto;
         }
 
         public IActionResult OnGet(int? Idrepuesto)
         {
-                GRrepuesto = repositorioRepuesto.GetGrupoRespuestoTrue();
+                GRrepuesto = repositorioGrupoRepuesto.GetEstadoTrue();
 
             if (Idrepuesto.HasValue)
             {   
@@ -43,10 +45,6 @@ namespace presentacion.Pages
         }
         public IActionResult OnPost()
         {
-           /*  if (!ModelState.IsValid)
-            {
-                
-            } */
             if (EditRepuesto.RepuestoId>0)
             {
                 EditRepuesto = repositorioRepuesto.Update(EditRepuesto);

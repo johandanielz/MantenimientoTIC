@@ -1,0 +1,69 @@
+﻿@page
+@model presentacion.Pages.EditRevRepModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/TipoVehiculo.css" />
+</head>
+
+    @if (@Model.EditRevRep.RevRepuestosId > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Rev-Repuestos</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Rev-Repuestos</li>
+        </ol>
+        <h3>Creación de Rev-Repuesto</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="EditRevRep.RevRepuestosId"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Repuesto</label>
+            </div>
+            <div class="col-md-3">
+                <select  class="form-select" asp-for="EditRevRep.RepuestoId" required>
+                    @foreach (var repuestos in Model.repuesto)
+                    {
+                        <option value="@repuestos.RepuestoId">@repuestos.Producto</option>
+                    }
+                </select>
+                <div class="invalid-feedback">
+                    Por favor Inserte una Operacion
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Revision</label>
+                </div>
+            <div class="col-md-3 col-lg-3">
+                <select  class="form-select" asp-for="EditRevRep.RevisionId" required>
+                    @foreach (var revisiones in Model.revision)
+                    {
+                        <option value="@revisiones.RevisionId">@revisiones.vehiculo.Placa</option>
+                    }
+                </select>
+                <div class="invalid-feedback">
+                    Por favor Inserte una Revision
+                </div>
+            </div>
+        </div>
+        <br>
+      
+        <div class="col-md-5">
+            <button type="submit" class="btn btn-outline-primary">Guardar</button>
+        </div>
+           
+    </form>
+</div> 
+
+
+<script src="~/js/Persona.js"></script>

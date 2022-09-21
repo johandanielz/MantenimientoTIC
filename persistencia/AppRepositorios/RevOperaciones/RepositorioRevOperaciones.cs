@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using dominio;
 
 namespace persistencia
@@ -22,10 +23,9 @@ namespace persistencia
         }
         //Eliminar
         void IRepositorioRevOperaciones.Delete(int IdrevOperaciones){
-            var revOperacionesExiste = _appContext.revOperaciones.FirstOrDefault(
+            var revOperacionesExiste = _appContext.revOperaciones.Include(rop => rop.revision.vehiculo).Include(rop => rop.operacion).FirstOrDefault(
                 ro => ro.RevOperacionesId == IdrevOperaciones
             );
-
             if (revOperacionesExiste == null)
             return;
             _appContext.Remove(revOperacionesExiste);
@@ -34,11 +34,11 @@ namespace persistencia
         }
         //Obtener todos los registros
         IEnumerable<RevOperaciones> IRepositorioRevOperaciones.GetAll(){
-            return _appContext.revOperaciones;
+            return _appContext.revOperaciones.Include(rop => rop.revision.vehiculo).Include(rop => rop.operacion);
         }
         //Obtener un solo registro
         RevOperaciones IRepositorioRevOperaciones.Get(int IdrevOperaciones){
-            return _appContext.revOperaciones.FirstOrDefault(
+            return _appContext.revOperaciones.Include(rop => rop.revision.vehiculo).Include(rop => rop.operacion).FirstOrDefault(
                 ro => ro.RevOperacionesId == IdrevOperaciones
             );
         }
@@ -49,8 +49,8 @@ namespace persistencia
             );
             if (revOperacionesEncontradas != null)
             {
-                /* revOperacionesEncontradas.operacion = revOperaciones.operacion;
-                revOperacionesEncontradas.revision = revOperaciones.revision; */
+                revOperacionesEncontradas.OperacionId = revOperaciones.OperacionId;
+                revOperacionesEncontradas.RevisionId = revOperaciones.RevisionId;
             }
             _appContext.SaveChanges();
             return revOperacionesEncontradas;

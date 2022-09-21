@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using dominio;
 
 namespace persistencia
@@ -22,7 +23,7 @@ namespace persistencia
         }
         //Eliminar
         void IRepositorioRevRepuestos.Delete(int IdrevRepuestos){
-            var revRepuestosExiste = _appContext.revRepuestos.FirstOrDefault(
+            var revRepuestosExiste = _appContext.revRepuestos.Include(rop => rop.revision.vehiculo).Include(rop => rop.repuesto).FirstOrDefault(
                 r => r.RevRepuestosId == IdrevRepuestos
             );
 
@@ -34,11 +35,11 @@ namespace persistencia
         }
         //Obtener todos los registros
         IEnumerable<RevRepuestos> IRepositorioRevRepuestos.GetAll(){
-            return _appContext.revRepuestos;
+            return _appContext.revRepuestos.Include(rop => rop.revision.vehiculo).Include(rop => rop.repuesto);
         }
         //Obtener un solo registro
         RevRepuestos IRepositorioRevRepuestos.Get(int IdrevRepuestos){
-            return _appContext.revRepuestos.FirstOrDefault(
+            return _appContext.revRepuestos.Include(rop => rop.revision.vehiculo).Include(rop => rop.repuesto).FirstOrDefault(
                 r => r.RevRepuestosId == IdrevRepuestos
             );
         }
@@ -49,8 +50,8 @@ namespace persistencia
             );
             if (revRepuestosEncontrados != null)
             {
-                /* revRepuestosEncontrados.repuesto = revRepuestos.repuesto;
-                revRepuestosEncontrados.revision = revRepuestos.revision; */
+                revRepuestosEncontrados.RepuestoId = revRepuestos.RepuestoId;
+                revRepuestosEncontrados.RevisionId = revRepuestos.RevisionId;
             }
             _appContext.SaveChanges();
             return revRepuestosEncontrados;

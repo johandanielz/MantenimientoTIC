@@ -9,12 +9,12 @@ namespace dominio
       [Key]
       public int RevRepuestosId {get; set;}
 
-      /*   [ForeignKey("Repuesto")]
+      [ForeignKey("Repuesto")]
         public int RepuestoId {get;set;}
         public virtual Repuesto repuesto {get;set;}
 
-        [ForeignKey("Revision")]
-        public int RevisionId {get;set;}
-        public virtual Revision revision {get;set;} */
+      [ForeignKey("Revision")]
+      public int RevisionId {get;set;}
+      public virtual Revision revision {get;set;}
     }
 }

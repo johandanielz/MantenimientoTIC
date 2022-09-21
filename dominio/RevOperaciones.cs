@@ -9,12 +9,13 @@ namespace dominio
         [Key]
         public int RevOperacionesId {get; set;}
 
-        /* [ForeignKey("Operacion")]
+        [ForeignKey("Operacion")]
         public int OperacionId {get;set;}
         public virtual Operacion operacion {get;set;}
 
         [ForeignKey("Revision")]
         public int RevisionId {get;set;}
-        public virtual Revision revision {get;set;} */
+        public virtual Revision revision {get;set;}
+        
     }
 }

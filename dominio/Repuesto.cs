@@ -16,10 +16,10 @@ namespace dominio
         public int Cantidad {get; set;}
         public bool Estado {get; set;}
 
-        /* [ForeignKey("GrupoRepuesto")]
+        [ForeignKey("GrupoRepuesto")]
         public int GrupoRepuestoId {get;set;}
-        public virtual GrupoRepuesto GrupoRepuesto {get;set;}
+        public virtual GrupoRepuesto grupoRepuesto {get;set;}
 
-        public RevRepuestos revRepuestos {get; set;} */
+        public RevRepuestos revRepuestos {get;set;}
     }
 }

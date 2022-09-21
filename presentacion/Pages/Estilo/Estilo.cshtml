@@ -1,0 +1,65 @@
+﻿@page
+@model presentacion.Pages.EstiloModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+
+  <h3 class="text-center p-2 mb-2 breadcrumb-item active" id="tituloColor"><strong>Estilos</strong></h3>
+
+  <a asp-page="EditEstilo" class="btn btn-outline-primary" id="btnAdd">
+    Agregar Estilo
+  </a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"class="text-center">N°</th>
+      <th scope="col" class="text-center">Nombre</th>
+      <th scope="col" class="text-center">Estado</th>
+      <th colspan="3" class="text-center">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var estilos in Model.estilo)
+    {
+        <tr>
+          @if (estilos.Estado == true)
+          { 
+            <td class="text-center">@estilos.EstiloId</td>
+            <td class="text-center">@estilos.Nombre</td>
+            <td class="text-center"><span class="badge rounded-pill bg-primary">Activo</span></td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn"  asp-page="./InfoEstilo" asp-route-Idestilo="@estilos.EstiloId">
+               <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditEstilo" asp-route-Idestilo="@estilos.EstiloId">
+               <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteEstilo" asp-route-Idestilo="@estilos.EstiloId">
+               <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+          }else{
+            <td class="text-center">@estilos.EstiloId</td>
+            <td class="text-center">@estilos.Nombre</td>
+            <td class="text-center"><span class="badge rounded-pill bg-danger">Inactivo</span></td>
+            <td class="text-center">
+              <a class="btn btn-outline-info table-btn"  asp-page="./InfoEstilo" asp-route-Idestilo="@estilos.EstiloId">
+               <i class="fa-solid fa-circle-info"></i>
+              </a>
+              <a class="btn btn-outline-primary table-btn" asp-page="./EditEstilo" asp-route-Idestilo="@estilos.EstiloId">
+               <i class="fa-solid fa-user-pen"></i>
+              </a>
+              <a class="btn btn-outline-danger table-btn" asp-page="./DeleteEstilo" asp-route-Idestilo="@estilos.EstiloId">
+               <i class="fa-solid fa-trash-can"></i>
+              </a>
+            </td>
+          }
+           
+        </tr>
+    }
+ </tbody>
+</table>

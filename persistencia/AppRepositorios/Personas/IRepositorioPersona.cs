@@ -14,6 +14,6 @@ namespace persistencia
         Persona Get(int Idpersona);
         IEnumerable<Persona> GetAll();
         Persona GetCedula(string Cedula);
-       
+        IEnumerable<Persona> GetPersonaTecnico();
     }
 }

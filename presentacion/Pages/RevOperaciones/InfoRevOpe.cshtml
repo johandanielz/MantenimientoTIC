@@ -1,0 +1,28 @@
+﻿@page
+@model presentacion.Pages.InfoRevOpeModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Operacion.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Rev-Operacion</li>
+</ol>
+<div>
+  <h5>Datos</h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Operacion</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevOpe.operacion.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Revision</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevOpe.revision.vehiculo.Placa)
+        </div>
+     </div>   
+</div>

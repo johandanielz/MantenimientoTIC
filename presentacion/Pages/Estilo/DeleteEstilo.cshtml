@@ -1,0 +1,49 @@
+﻿@page
+@model presentacion.Pages.DeleteEstiloModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Estilos</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar el estilo <strong>@Model.DelEstilo.Nombre?</strong></h4>
+    <br>
+    <div class="row" id="delete">
+        <div class="col-md-2">
+            <label><strong>Color</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelEstilo.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.DelEstilo.Estado == true)
+        {
+            <div class="col-md-10">
+                <label>Activo</label>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-10">
+                <label>Inactivo</label>
+            </div>
+        }
+    </div>
+</div>
+
+    <form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelEstilo.EstiloId">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteEstilo/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Estilo" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+    </form>

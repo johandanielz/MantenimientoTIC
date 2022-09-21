@@ -1,0 +1,60 @@
+﻿@page
+@model presentacion.Pages.EditEstiloModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+
+    @if (@Model.ListEstilo.EstiloId > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Estilos</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Estilos</li>
+        </ol>
+        <h3>Creación de Estilos</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="ListEstilo.EstiloId"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Nombres</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="ListEstilo.Nombre" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por favor digite un estilo
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                    <label class="col-form-label">Estado</label>
+            </div>
+            <div class="col-md-3">
+                    <div class="button r" id="button-6">
+                    <input type="checkbox" class="checkbox" asp-for="ListEstilo.Estado"/>
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                    </div>
+            </div>
+         </div>
+        <br>
+        <div class="row col-md-10">
+            <div class="col-md-5 col-lg-5">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>    
+    </form>
+</div> 
+
+<script src="~/js/Persona.js"></script>

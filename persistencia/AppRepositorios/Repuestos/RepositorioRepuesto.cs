@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using dominio;
 
 namespace persistencia
@@ -22,7 +23,7 @@ namespace persistencia
         }
         //Eliminar
         void IRepositorioRepuesto.Delete(int Idrepuesto){
-            var repuestoExiste = _appContext.repuesto.FirstOrDefault(
+            var repuestoExiste = _appContext.repuesto.Include(r => r.grupoRepuesto).FirstOrDefault(
                 r => r.RepuestoId == Idrepuesto
             );
 
@@ -34,17 +35,18 @@ namespace persistencia
         }
         //Obtener todos los registros
         IEnumerable<Repuesto> IRepositorioRepuesto.GetAll(){
-            return _appContext.repuesto;
+            return _appContext.repuesto.Include(r => r.grupoRepuesto);
+        }
+        IEnumerable<Repuesto> IRepositorioRepuesto.GetEstadoTrue(){
+            return _appContext.repuesto.Where(r => r.Estado == true).ToList();
         }
         //Obtener un solo registro
         Repuesto IRepositorioRepuesto.Get(int Idrepuesto){
-            return _appContext.repuesto.FirstOrDefault(
+            return _appContext.repuesto.Include(r => r.grupoRepuesto).FirstOrDefault(
                 r => r.RepuestoId == Idrepuesto
             );
         }
-        IEnumerable<GrupoRepuesto> IRepositorioRepuesto.GetGrupoRespuestoTrue(){
-            return _appContext.grupoRepuesto.Where(gr => gr.Estado == true).ToList();
-        }
+        
         //Actualizar
         Repuesto IRepositorioRepuesto.Update(Repuesto repuesto){
             var repuestoEncontrado = _appContext.repuesto.FirstOrDefault(
@@ -59,6 +61,7 @@ namespace persistencia
                 repuestoEncontrado.Precio = repuesto.Precio;
                 repuestoEncontrado.Cantidad = repuesto.Cantidad;
                 repuestoEncontrado.Estado = repuesto.Estado;
+                repuestoEncontrado.GrupoRepuestoId= repuesto.GrupoRepuestoId;
             }
             _appContext.SaveChanges();
             return repuestoEncontrado;

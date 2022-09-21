@@ -36,6 +36,9 @@ namespace persistencia
         IEnumerable<Persona> IRepositorioPersona.GetAll(){
             return _appContext.persona;
         }
+        IEnumerable<Persona> IRepositorioPersona.GetPersonaTecnico(){
+            return _appContext.persona.Where(p => p.Clasificacion == "Tecnico").ToList();
+        }
         //Obtener un solo registro
         Persona IRepositorioPersona.Get(int Idpersona){
             return _appContext.persona.FirstOrDefault(

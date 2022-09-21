@@ -1,0 +1,54 @@
+﻿@page
+@model presentacion.Pages.DeleteTecnicoModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Eliminar Tecnico</li>
+</ol>
+<div>
+  <h4>Estas seguro de querer eliminar el Tecnico <strong>@Model.DelTecnico.persona.Nombre?</strong></h4>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Tecnico</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelTecnico.persona.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tipo Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.DelTecnico.tipoVehiculo.Tipo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.DelTecnico.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>
+<form method="post">
+        <div class="row" id="delete">
+        <input type="hidden" asp-for="DelTecnico.TecnicoId">
+        <div class="col-md-2">
+            <input type="submit" name="" value="¡Si, Eliminar!" class="btn btn-outline-danger" asp-page="/DeleteTecnico/OnPost">
+        </div>
+        <div class="col-md-10">
+            <a asp-page="./Tecnico" class="btn btn-outline-primary">¡No!</a>
+        </div>
+        </div>
+</form>

@@ -36,6 +36,9 @@ namespace persistencia
         IEnumerable<TipoVehiculo> IRepositorioTipoVehiculo.GetAll(){
             return _appContext.tipoVehiculo;
         }
+        IEnumerable<TipoVehiculo> IRepositorioTipoVehiculo.GetEstadoTrue(){
+            return _appContext.tipoVehiculo.Where(tv => tv.Estado == true).ToList();
+        }
         //Obtener un solo registro
         TipoVehiculo IRepositorioTipoVehiculo.Get(int IdtipoVehiculo){
             return _appContext.tipoVehiculo.FirstOrDefault(

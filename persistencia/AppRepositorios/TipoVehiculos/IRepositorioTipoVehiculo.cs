@@ -13,5 +13,6 @@ namespace persistencia
         void Delete(int IdtipoVehiculo);
         TipoVehiculo Get(int IdtipoVehiculo);
         IEnumerable<TipoVehiculo> GetAll();
+        IEnumerable<TipoVehiculo> GetEstadoTrue();
     }
 }

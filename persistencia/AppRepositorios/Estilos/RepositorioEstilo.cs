@@ -36,6 +36,9 @@ namespace persistencia
         IEnumerable<Estilo> IRepositorioEstilo.GetAll(){
             return _appContext.estilo;
         }
+        IEnumerable<Estilo> IRepositorioEstilo.GetEstadoTrue(){
+            return _appContext.estilo.Where(e => e.Estado == true).ToList();
+        }
         //Obtener un solo registro
         Estilo IRepositorioEstilo.Get(int Idestilo){
             return _appContext.estilo.FirstOrDefault(

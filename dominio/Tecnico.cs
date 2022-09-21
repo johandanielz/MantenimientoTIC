@@ -19,6 +19,6 @@ namespace dominio
         public int TipoVehiculoId {get;set;}
         public virtual TipoVehiculo tipoVehiculo {get;set;}
 
-        /* public ICollection<Revision> revision { get; set; } */
+        public ICollection<Revision> revision { get; set; }
     }
 }

@@ -1,0 +1,37 @@
+﻿@page
+@model presentacion.Pages.InfoMarcaModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Color.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Marcas</li>
+</ol>
+<div>
+  <h5>Datos de la Marca <strong>@Model.InfoMarca.Nombre</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Marca</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoMarca.Nombre)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        @if (@Model.InfoMarca.Estado == true)
+        {
+        <div class="col-md-10">
+            <label>Activo</label>
+        </div>
+        }
+        else
+        {
+        <div class="col-md-10">
+            <label>Inactivo</label>
+        </div>
+        }
+    </div>
+</div>

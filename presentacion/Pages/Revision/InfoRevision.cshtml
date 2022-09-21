@@ -1,0 +1,70 @@
+﻿@page
+@model presentacion.Pages.InfoRevisionModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">Sección Datos de Revision</li>
+</ol>
+<div>
+  <h5>Datos de la revision del Vehiculo <strong>@Model.InfoRevision.vehiculo.Placa</strong></h5>
+    <br>
+    <div class="row" id="info">
+        <div class="col-md-2">
+            <label><strong>Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.vehiculo.Placa)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Tecnico</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.tecnico.PersonaId)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Kilometraje</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.Kilometraje)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado del Vehiculo</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.Estado_vehiculo)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Fecha</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.Fecha)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Fecha Inicial</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.Fecha_inicio)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Fecha Final</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.Fecha_fin)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Sintomas</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.Sintomas)
+        </div>
+        <div class="col-md-2">
+            <label><strong>Estado</strong></label>
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(m => m.InfoRevision.Estado)
+        </div>
+    </div>
+</div>

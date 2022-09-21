@@ -41,10 +41,10 @@ namespace presentacion.Pages
         public IActionResult OnGet(int? Idvehiculo)
         {
             persona = repositorioPersona.GetAll();
-            color = repositorioColor.GetAll();
-            estilo = repositorioEstilo.GetAll();
-            marca = repositorioMarca.GetAll();
-            tipoVehiculo = repositorioTipoVehiculo.GetAll();
+            color = repositorioColor.GetEstadoTrue();
+            estilo = repositorioEstilo.GetEstadoTrue();
+            marca = repositorioMarca.GetEstadoTrue();
+            tipoVehiculo = repositorioTipoVehiculo.GetEstadoTrue();
 
             if (Idvehiculo.HasValue)
             {

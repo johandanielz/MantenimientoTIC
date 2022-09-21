@@ -39,6 +39,9 @@ namespace persistencia
         IEnumerable<Color> IRepositorioColor.GetAll(){
             return _appContext.color;
         }
+        IEnumerable<Color> IRepositorioColor.GetEstadoTrue(){
+            return _appContext.color.Where(c => c.Estado == true).ToList();
+        }
         //Obtener un solo registro
         Color IRepositorioColor.Get(int Idcolor){
             return _appContext.color.FirstOrDefault(

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l2khB116HFv1W0D2qRK6be7yAt+qG6jbc7UlkMZd5U/I+0NRU9X8LqKuH4BI1ZGBnDQ3udLSZ0HYsn9VkcywvQ==",
+  "dgSpecHash": "KK2EE6tpNPC7gC/tCQeFJUVjTtWHo3597P0fggZwMu9h1jY7DMMOgYJsELfRMvgm68eH2CK22Y8tXsazpvCorQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\presentacion\\presentacion.csproj",
+  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\presentacion\\presentacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

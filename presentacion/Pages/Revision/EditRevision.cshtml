@@ -1,0 +1,158 @@
+﻿@page
+@model presentacion.Pages.EditRevisionModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Persona.css" />
+</head>
+
+    @if (@Model.EditRevision.RevisionId > 0 )
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Actualizar Revision</li>
+        </ol>
+        <h3>Modificar Datos</h3>
+    }
+    else
+    {
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Sección Agregar Revision</li>
+        </ol>
+        <h3>Creación de Revision</h3>
+    }
+
+ <div class="container" id="formList">
+    <form method="post"  class="needs-validation" novalidate>
+        <input type="hidden" asp-for="EditRevision.RevisionId"/>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Fecha</label>
+            </div>
+            <div class="col-md-3">
+                 <input type="datetime-local" asp-for="EditRevision.Fecha" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por Favor digite una Fecha
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <label class="col-form-label">Fecha de Inicio</label>
+                </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="datetime-local" asp-for="EditRevision.Fecha_inicio" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por Favor digite una Fecha
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Kilometraje</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" asp-for="EditRevision.Kilometraje" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por Favor el Kilometraje
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Fecha Final</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <input type="datetime-local" asp-for="EditRevision.Fecha_fin" class="form-control" required>
+                <div class="invalid-feedback">
+                    Por Favor digite una Fecha
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Estado del Vehiculo</label>
+            </div>
+            <div class="col-md-3">
+                <div class="form-floating">
+                    <textarea class="form-control" asp-for="EditRevision.Estado_vehiculo" style="height: 100px" required></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor digite el estado de Vehiculo
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Sintomas</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="form-floating">
+                    <textarea class="form-control" asp-for="EditRevision.Sintomas" style="height: 100px" required></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor digite que tiene el Vehiculo
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Vehiculo</label>
+            </div>
+            <div class="col-md-3">
+                <select  class="form-select" asp-for="EditRevision.VehiculoId" required>
+                    @foreach (var vehiculos in Model.vehiculo)
+                    {
+                        <option value="@vehiculos.VehiculoId">@vehiculos.Placa</option>
+                    }
+                </select>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
+            </div>
+            <div class="col-md-2">
+                <label class="col-form-label">Estado</label>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <select asp-for="EditRevision.Estado" class="form-select" required>
+                    <option selected disabled value="">Seleccione...</option>
+                    <option value="No Iniciado">No Iniciado</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row col-md-10">
+            <div class="col-md-2">
+                <label class="col-form-label">Tecnico</label>
+            </div>
+            <div class="col-md-3">
+                <select  class="form-select" asp-for="EditRevision.TecnicoId" required>
+                    @foreach (var tecnicos in Model.tecnico)
+                    {
+                        <option value="@tecnicos.TecnicoId">@tecnicos.persona.Nombre</option>
+                    }
+                </select>
+                <div class="invalid-feedback">
+                    Por favor seleccion una opcion
+                </div>
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <button type="submit" class="btn btn-outline-primary">Guardar</button>
+            </div>
+        </div>
+        
+    </form>
+</div> 
+
+
+<script src="~/js/Persona.js"></script>

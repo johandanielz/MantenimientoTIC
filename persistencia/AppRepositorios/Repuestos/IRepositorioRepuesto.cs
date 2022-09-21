@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using dominio;
 
 namespace persistencia
@@ -13,7 +14,6 @@ namespace persistencia
         void Delete(int Idrepuesto);
         Repuesto Get(int Idrepuesto);
         IEnumerable<Repuesto> GetAll();
-        IEnumerable<GrupoRepuesto> GetGrupoRespuestoTrue();
-       
+        IEnumerable<Repuesto> GetEstadoTrue();
     }
 }

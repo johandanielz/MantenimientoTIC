@@ -20,7 +20,7 @@ namespace presentacion.Pages
         }
         public void OnGet()
         {
-          /*  grupoRepuesto =  repositorioGrupoRepuesto.GetAll(); */
+           grupoRepuesto =  repositorioGrupoRepuesto.GetAll();
         }
     }
 }

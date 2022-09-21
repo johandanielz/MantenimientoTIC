@@ -170,6 +170,9 @@ namespace persistencia.Migrations
                     b.Property<bool>("Estado")
                         .HasColumnType("bit");
 
+                    b.Property<int>("GrupoRepuestoId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Precio")
                         .HasColumnType("int");
 
@@ -184,6 +187,8 @@ namespace persistencia.Migrations
 
                     b.HasKey("RepuestoId");
 
+                    b.HasIndex("GrupoRepuestoId");
+
                     b.ToTable("repuesto");
                 });
 
@@ -194,7 +199,19 @@ namespace persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("OperacionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RevisionId")
+                        .HasColumnType("int");
+
                     b.HasKey("RevOperacionesId");
+
+                    b.HasIndex("OperacionId")
+                        .IsUnique();
+
+                    b.HasIndex("RevisionId")
+                        .IsUnique();
 
                     b.ToTable("revOperaciones");
                 });
@@ -206,7 +223,19 @@ namespace persistencia.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("RepuestoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RevisionId")
+                        .HasColumnType("int");
+
                     b.HasKey("RevRepuestosId");
+
+                    b.HasIndex("RepuestoId")
+                        .IsUnique();
+
+                    b.HasIndex("RevisionId")
+                        .IsUnique();
 
                     b.ToTable("revRepuestos");
                 });
@@ -239,7 +268,17 @@ namespace persistencia.Migrations
                     b.Property<string>("Sintomas")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TecnicoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VehiculoId")
+                        .HasColumnType("int");
+
                     b.HasKey("RevisionId");
+
+                    b.HasIndex("TecnicoId");
+
+                    b.HasIndex("VehiculoId");
 
                     b.ToTable("revision");
                 });
@@ -365,6 +404,74 @@ namespace persistencia.Migrations
                     b.ToTable("vehiculo");
                 });
 
+            modelBuilder.Entity("dominio.Repuesto", b =>
+                {
+                    b.HasOne("dominio.GrupoRepuesto", "grupoRepuesto")
+                        .WithMany("repuesto")
+                        .HasForeignKey("GrupoRepuestoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("grupoRepuesto");
+                });
+
+            modelBuilder.Entity("dominio.RevOperaciones", b =>
+                {
+                    b.HasOne("dominio.Operacion", "operacion")
+                        .WithOne("revOperaciones")
+                        .HasForeignKey("dominio.RevOperaciones", "OperacionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dominio.Revision", "revision")
+                        .WithOne("revOperaciones")
+                        .HasForeignKey("dominio.RevOperaciones", "RevisionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("operacion");
+
+                    b.Navigation("revision");
+                });
+
+            modelBuilder.Entity("dominio.RevRepuestos", b =>
+                {
+                    b.HasOne("dominio.Repuesto", "repuesto")
+                        .WithOne("revRepuestos")
+                        .HasForeignKey("dominio.RevRepuestos", "RepuestoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dominio.Revision", "revision")
+                        .WithOne("revRepuestos")
+                        .HasForeignKey("dominio.RevRepuestos", "RevisionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("repuesto");
+
+                    b.Navigation("revision");
+                });
+
+            modelBuilder.Entity("dominio.Revision", b =>
+                {
+                    b.HasOne("dominio.Tecnico", "tecnico")
+                        .WithMany("revision")
+                        .HasForeignKey("TecnicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dominio.Vehiculo", "vehiculo")
+                        .WithMany("revision")
+                        .HasForeignKey("VehiculoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("tecnico");
+
+                    b.Navigation("vehiculo");
+                });
+
             modelBuilder.Entity("dominio.Tecnico", b =>
                 {
                     b.HasOne("dominio.Persona", "persona")
@@ -437,9 +544,19 @@ namespace persistencia.Migrations
                     b.Navigation("vehiculo");
                 });
 
+            modelBuilder.Entity("dominio.GrupoRepuesto", b =>
+                {
+                    b.Navigation("repuesto");
+                });
+
             modelBuilder.Entity("dominio.Marca", b =>
                 {
                     b.Navigation("vehiculo");
+                });
+
+            modelBuilder.Entity("dominio.Operacion", b =>
+                {
+                    b.Navigation("revOperaciones");
                 });
 
             modelBuilder.Entity("dominio.Persona", b =>
@@ -449,11 +566,33 @@ namespace persistencia.Migrations
                     b.Navigation("vehiculo");
                 });
 
+            modelBuilder.Entity("dominio.Repuesto", b =>
+                {
+                    b.Navigation("revRepuestos");
+                });
+
+            modelBuilder.Entity("dominio.Revision", b =>
+                {
+                    b.Navigation("revOperaciones");
+
+                    b.Navigation("revRepuestos");
+                });
+
+            modelBuilder.Entity("dominio.Tecnico", b =>
+                {
+                    b.Navigation("revision");
+                });
+
             modelBuilder.Entity("dominio.TipoVehiculo", b =>
                 {
                     b.Navigation("tecnico");
 
                     b.Navigation("vehiculo");
+                });
+
+            modelBuilder.Entity("dominio.Vehiculo", b =>
+                {
+                    b.Navigation("revision");
                 });
 #pragma warning restore 612, 618
         }

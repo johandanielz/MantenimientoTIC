@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kIAEixwkWK4qnYiKTr1YnlYtlN37rcn1OyNiXYRN9isZFU11vGwO1xo92nTckVlU1c+xOFy5KN9lxG8ZyxnK+w==",
+  "dgSpecHash": "GUDIf4fdiEwWaXCeedN3JCr2jqLbddiHO95K7vE97rsXiA6M1f4MxrZeHvnpHRpHCZ1Hhyg11+IJ2aeA2wcTCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\persistencia\\persistencia.csproj",
+  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\persistencia\\persistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

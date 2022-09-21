@@ -15,8 +15,6 @@ namespace presentacion.Pages
 
         public IEnumerable<Repuesto> repuesto {get;set;}
 
-        public IEnumerable<GrupoRepuesto> GRrepuesto {get;set;}
-
         public RespuestoModel(IRepositorioRepuesto repositorioRepuesto)
         {
             this.repositorioRepuesto = repositorioRepuesto;
@@ -25,7 +23,6 @@ namespace presentacion.Pages
         public void OnGet()
         {
             repuesto = repositorioRepuesto.GetAll();
-            GRrepuesto = repositorioRepuesto.GetGrupoRespuestoTrue();
         }
     }
 }

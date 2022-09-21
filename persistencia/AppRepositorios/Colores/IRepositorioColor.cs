@@ -13,5 +13,6 @@ namespace persistencia
         void Delete(int Idcolor);
         Color Get(int Idcolor);
         IEnumerable<Color> GetAll();
+        IEnumerable<Color> GetEstadoTrue();
     }
 }

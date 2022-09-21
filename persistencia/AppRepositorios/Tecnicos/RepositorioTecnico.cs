@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using dominio;
 
 namespace persistencia
@@ -22,7 +23,7 @@ namespace persistencia
         }
         //Eliminar
         void IRepositorioTecnico.Delete(int Idtecnico){
-            var tecnicoExiste = _appContext.tecnico.FirstOrDefault(
+            var tecnicoExiste = _appContext.tecnico.Include(t => t.persona).Include(t => t.tipoVehiculo).FirstOrDefault(
                 t => t.TecnicoId == Idtecnico
             );
 
@@ -34,11 +35,14 @@ namespace persistencia
         }
         //Obtener todos los registros
         IEnumerable<Tecnico> IRepositorioTecnico.GetAll(){
-            return _appContext.tecnico;
+            return _appContext.tecnico.Include(t => t.persona).Include(t => t.tipoVehiculo);
+        }
+        IEnumerable<Tecnico> IRepositorioTecnico.GetEstadoTrue(){
+            return _appContext.tecnico.Where(t => t.Estado == true).ToList();
         }
         //Obtener un solo registro
         Tecnico IRepositorioTecnico.Get(int Idtecnico){
-            return _appContext.tecnico.FirstOrDefault(
+            return _appContext.tecnico.Include(t => t.persona).Include(t => t.tipoVehiculo).FirstOrDefault(
                 t => t.TecnicoId == Idtecnico
             );
         }
@@ -50,7 +54,8 @@ namespace persistencia
             if (tecnicoEncontrado != null)
             {
                 tecnicoEncontrado.Estado = tecnico.Estado;
-                tecnicoEncontrado.persona = tecnico.persona;
+                tecnicoEncontrado.PersonaId = tecnico.PersonaId;
+                tecnicoEncontrado.TipoVehiculoId = tecnico.TipoVehiculoId;
             }
             _appContext.SaveChanges();
             return tecnicoEncontrado;

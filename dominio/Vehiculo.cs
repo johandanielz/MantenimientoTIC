@@ -33,6 +33,6 @@ namespace dominio
         public int ColorId {get;set;}
         public virtual Color color {get;set;}
 
-       /*  public ICollection<Revision> revision { get; set; } */
+        public ICollection<Revision> revision { get; set; }
     }
 }

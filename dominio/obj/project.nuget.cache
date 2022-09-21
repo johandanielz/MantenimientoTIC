@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FSdWKVrk9rr2dK2O0y17Jsff8yfSfzaKCWmDsCIHI3I05ZeRdG19iC7iOtdJT8VAlqbVcvhw1wozglK5BdTXlA==",
+  "dgSpecHash": "cmxBxGaN9ThizKRiE+KkWsFtiYYSbY0jIbB/NjJUkF7LpQd+K7kRlIlNKob0gdLFW5D/pE4cRJgFY+t3TSPD6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\mantenimientoTIC\\dominio\\dominio.csproj",
+  "projectFilePath": "C:\\Users\\acer\\OneDrive\\Escritorio\\Proyecto_3er_Ciclo\\MantenimientoTIC\\dominio\\dominio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
