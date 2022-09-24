@@ -28,7 +28,7 @@ namespace presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
+           
             services.AddScoped<IRepositorioPersona, RepositorioPersona>();
             services.AddScoped<IRepositorioColor, RepositorioColor>();
             services.AddScoped<IRepositorioOperacion, RepositorioOperacion>();
@@ -46,7 +46,7 @@ namespace presentacion
             services.AddScoped<IRepositorioRevRepuestos, RepositorioRevRepuestos>();
             services.AddScoped<IRepositorioEstilo, RepositorioEstilo>();
             services.AddScoped<IRepositorioMarca, RepositorioMarca>();
-
+            services.AddControllersWithViews();
 
             //Configuracion para la conexion a la bd
             services.AddDbContext<AplicationsContext>(options =>
@@ -71,6 +71,8 @@ namespace presentacion
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

@@ -38,7 +38,7 @@ namespace persistencia
             return _appContext.tecnico.Include(t => t.persona).Include(t => t.tipoVehiculo);
         }
         IEnumerable<Tecnico> IRepositorioTecnico.GetEstadoTrue(){
-            return _appContext.tecnico.Where(t => t.Estado == true).ToList();
+            return _appContext.tecnico.Include(t => t.persona).Where(t => t.Estado == true).ToList();
         }
         //Obtener un solo registro
         Tecnico IRepositorioTecnico.Get(int Idtecnico){
