@@ -43,7 +43,7 @@
             <td class="text-center">@revisiones.Fecha_fin</td>
             <td class="text-center">@revisiones.Sintomas</td>
             <td class="text-center">@revisiones.vehiculo.Placa</td>
-            <td class="text-center">@revisiones.tecnico.PersonaId</td>
+            <td class="text-center">@revisiones.tecnico.persona.Nombre</td>
             <td class="text-center"><span class="badge rounded-pill bg-danger">No Iniciado</span></td>
             <td class="text-center">
               <a class="btn btn-outline-info table-btn" asp-page="./InfoRevision" asp-route-Idrevision="@revisiones.RevisionId">
@@ -67,7 +67,7 @@
             <td class="text-center">@revisiones.Fecha_fin</td>
             <td class="text-center">@revisiones.Sintomas</td>
             <td class="text-center">@revisiones.vehiculo.Placa</td>
-            <td class="text-center">@revisiones.tecnico.PersonaId</td>
+            <td class="text-center">@revisiones.tecnico.persona.Nombre</td>
             <td class="text-center"><span class="badge rounded-pill bg-primary">En Proceso</span></td>
             <td class="text-center">
               <a class="btn btn-outline-info table-btn" asp-page="./InfoRevision" asp-route-Idrevision="@revisiones.RevisionId">
@@ -91,7 +91,7 @@
             <td class="text-center">@revisiones.Fecha_fin</td>
             <td class="text-center">@revisiones.Sintomas</td>
             <td class="text-center">@revisiones.vehiculo.Placa</td>
-            <td class="text-center">@revisiones.tecnico.PersonaId</td>
+            <td class="text-center">@revisiones.tecnico.persona.Nombre</td>
             <td class="text-center"><span class="badge rounded-pill bg-success">Finalizado</span></td>
             <td class="text-center">
               <a class="btn btn-outline-info table-btn" asp-page="./InfoRevision" asp-route-Idrevision="@revisiones.RevisionId">

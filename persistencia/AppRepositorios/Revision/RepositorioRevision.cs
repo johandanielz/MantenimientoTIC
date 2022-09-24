@@ -23,7 +23,7 @@ namespace persistencia
         }
         //Eliminar
         void IRepositorioRevision.Delete(int Idrevision){
-            var revisionExiste = _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico).FirstOrDefault(
+            var revisionExiste = _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico.persona).FirstOrDefault(
                 r => r.RevisionId == Idrevision
             );
 
@@ -35,11 +35,11 @@ namespace persistencia
         }
         //Obtener todos los registros
         IEnumerable<Revision> IRepositorioRevision.GetAll(){
-            return _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico);
+            return _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico.persona);
         }
         //Obtener un solo registro
         Revision IRepositorioRevision.Get(int Idrevision){
-            return _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico).FirstOrDefault(
+            return _appContext.revision.Include(r => r.vehiculo).Include(r => r.tecnico.persona).FirstOrDefault(
                 r => r.RevisionId == Idrevision
             );
         }
